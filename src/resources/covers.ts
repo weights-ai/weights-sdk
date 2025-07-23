@@ -3,6 +3,7 @@
 import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
+import { path } from '../internal/utils/path';
 
 export class Covers extends APIResource {
   /**
@@ -11,6 +12,14 @@ export class Covers extends APIResource {
    */
   create(body: CoverCreateParams, options?: RequestOptions): APIPromise<CoverCreateResponse> {
     return this._client.post('/covers/create', { body, ...options });
+  }
+
+  /**
+   * Retrieves the details of a specific AI cover job by its ID. Returns null if the
+   * cover is not found or doesn't belong to the authenticated user.
+   */
+  retrieve(id: string, options?: RequestOptions): APIPromise<CoverRetrieveResponse | null> {
+    return this._client.get(path`/covers/${id}`, options);
   }
 
   /**
@@ -26,6 +35,28 @@ export class Covers extends APIResource {
 }
 
 export interface CoverCreateResponse {
+  id: string;
+
+  createdAt: string;
+
+  status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+
+  inputFileName?: string | null;
+
+  inputUrl?: string | null;
+
+  outputUrl?: string | null;
+
+  pitch?: number | null;
+
+  preStemmed?: boolean | null;
+
+  stemOnly?: boolean | null;
+
+  ttsText?: string | null;
+}
+
+export interface CoverRetrieveResponse {
   id: string;
 
   createdAt: string;
@@ -108,6 +139,7 @@ export interface CoverListParams {
 export declare namespace Covers {
   export {
     type CoverCreateResponse as CoverCreateResponse,
+    type CoverRetrieveResponse as CoverRetrieveResponse,
     type CoverListResponse as CoverListResponse,
     type CoverCreateParams as CoverCreateParams,
     type CoverListParams as CoverListParams,
