@@ -23,33 +23,33 @@ import {
   CoverListResponse,
   Covers,
 } from './resources/covers';
+import { GenerateSong } from './resources/generate-song';
 import {
-  GenerateSong,
-  GenerateSongCreateParams,
-  GenerateSongCreateResponse,
-} from './resources/generate-song';
+  ImageLoraModelCreateParams,
+  ImageLoraModelCreateResponse,
+  ImageLoraModelListParams,
+  ImageLoraModelListResponse,
+  ImageLoraModelRetrieveResponse,
+  ImageLoraModelRetrieveStatusResponse,
+  ImageLoraModelSearchParams,
+  ImageLoraModelSearchResponse,
+  ImageLoraModels,
+} from './resources/image-lora-models';
 import {
-  ModelCreateParams,
-  ModelCreateResponse,
-  ModelListParams,
-  ModelListResponse,
-  Models,
-} from './resources/models';
-import {
-  SongListParams,
-  SongListResponse,
-  SongRetrieveParams,
-  SongRetrieveResponse,
-  Songs,
-} from './resources/songs';
-import { StemAudio, StemAudioCreateParams, StemAudioCreateResponse } from './resources/stem-audio';
-import {
-  StemmedAudio,
-  StemmedAudioRetrieveParams,
-  StemmedAudioRetrieveResponse,
-} from './resources/stemmed-audio';
-import { Usage, UsageRetrieveResponse } from './resources/usage';
+  ImageCreateParams,
+  ImageCreateResponse,
+  ImageEditParams,
+  ImageEditResponse,
+  Images,
+} from './resources/images';
+import { Models } from './resources/models';
+import { SongListParams, SongListResponse, Songs } from './resources/songs';
+import { StemAudio } from './resources/stem-audio';
+import { StemmedAudio } from './resources/stemmed-audio';
+import { Usage } from './resources/usage';
 import { User, UserRetrieveResponse } from './resources/user';
+import { VideoCreateParams, VideoCreateResponse, Videos } from './resources/videos';
+import { VisualCreation } from './resources/visual-creation';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -755,6 +755,10 @@ export class Weights {
   usage: API.Usage = new API.Usage(this);
   user: API.User = new API.User(this);
   songs: API.Songs = new API.Songs(this);
+  imageLoraModels: API.ImageLoraModels = new API.ImageLoraModels(this);
+  images: API.Images = new API.Images(this);
+  videos: API.Videos = new API.Videos(this);
+  visualCreation: API.VisualCreation = new API.VisualCreation(this);
 }
 Weights.GenerateSong = GenerateSong;
 Weights.StemAudio = StemAudio;
@@ -764,26 +768,18 @@ Weights.Models = Models;
 Weights.Usage = Usage;
 Weights.User = User;
 Weights.Songs = Songs;
+Weights.ImageLoraModels = ImageLoraModels;
+Weights.Images = Images;
+Weights.Videos = Videos;
+Weights.VisualCreation = VisualCreation;
 export declare namespace Weights {
   export type RequestOptions = Opts.RequestOptions;
 
-  export {
-    GenerateSong as GenerateSong,
-    type GenerateSongCreateResponse as GenerateSongCreateResponse,
-    type GenerateSongCreateParams as GenerateSongCreateParams,
-  };
+  export { GenerateSong as GenerateSong };
 
-  export {
-    StemAudio as StemAudio,
-    type StemAudioCreateResponse as StemAudioCreateResponse,
-    type StemAudioCreateParams as StemAudioCreateParams,
-  };
+  export { StemAudio as StemAudio };
 
-  export {
-    StemmedAudio as StemmedAudio,
-    type StemmedAudioRetrieveResponse as StemmedAudioRetrieveResponse,
-    type StemmedAudioRetrieveParams as StemmedAudioRetrieveParams,
-  };
+  export { StemmedAudio as StemmedAudio };
 
   export {
     Covers as Covers,
@@ -793,23 +789,39 @@ export declare namespace Weights {
     type CoverListParams as CoverListParams,
   };
 
-  export {
-    Models as Models,
-    type ModelCreateResponse as ModelCreateResponse,
-    type ModelListResponse as ModelListResponse,
-    type ModelCreateParams as ModelCreateParams,
-    type ModelListParams as ModelListParams,
-  };
+  export { Models as Models };
 
-  export { Usage as Usage, type UsageRetrieveResponse as UsageRetrieveResponse };
+  export { Usage as Usage };
 
   export { User as User, type UserRetrieveResponse as UserRetrieveResponse };
 
+  export { Songs as Songs, type SongListResponse as SongListResponse, type SongListParams as SongListParams };
+
   export {
-    Songs as Songs,
-    type SongRetrieveResponse as SongRetrieveResponse,
-    type SongListResponse as SongListResponse,
-    type SongRetrieveParams as SongRetrieveParams,
-    type SongListParams as SongListParams,
+    ImageLoraModels as ImageLoraModels,
+    type ImageLoraModelCreateResponse as ImageLoraModelCreateResponse,
+    type ImageLoraModelRetrieveResponse as ImageLoraModelRetrieveResponse,
+    type ImageLoraModelListResponse as ImageLoraModelListResponse,
+    type ImageLoraModelRetrieveStatusResponse as ImageLoraModelRetrieveStatusResponse,
+    type ImageLoraModelSearchResponse as ImageLoraModelSearchResponse,
+    type ImageLoraModelCreateParams as ImageLoraModelCreateParams,
+    type ImageLoraModelListParams as ImageLoraModelListParams,
+    type ImageLoraModelSearchParams as ImageLoraModelSearchParams,
   };
+
+  export {
+    Images as Images,
+    type ImageCreateResponse as ImageCreateResponse,
+    type ImageEditResponse as ImageEditResponse,
+    type ImageCreateParams as ImageCreateParams,
+    type ImageEditParams as ImageEditParams,
+  };
+
+  export {
+    Videos as Videos,
+    type VideoCreateResponse as VideoCreateResponse,
+    type VideoCreateParams as VideoCreateParams,
+  };
+
+  export { VisualCreation as VisualCreation };
 }

@@ -2,4 +2,4 @@
 
 import { APIResource } from '../core/resource';
 
-export class Models extends APIResource {}
+export class VisualCreation extends APIResource {}

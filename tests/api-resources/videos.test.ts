@@ -7,10 +7,10 @@ const client = new Weights({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource generateSong', () => {
+describe('resource videos', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.generateSong.create({ lyrics: 'lyrics' });
+    const responsePromise = client.videos.create({ inputImageUrl: 'https://example.com', prompt: 'x' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,6 +22,6 @@ describe('resource generateSong', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
-    const response = await client.generateSong.create({ lyrics: 'lyrics', section: 'verse' });
+    const response = await client.videos.create({ inputImageUrl: 'https://example.com', prompt: 'x' });
   });
 });
