@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Weights } from 'weights';
+import { Weights } from '@weights-ai/sdk';
 
 const { stringifyQuery } = Weights.prototype as any;
 

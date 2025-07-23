@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'weights/internal/uploads';
-import { toFile } from 'weights/core/uploads';
+import { multipartFormRequestOptions, createForm } from '@weights-ai/sdk/internal/uploads';
+import { toFile } from '@weights-ai/sdk/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
