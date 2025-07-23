@@ -19,9 +19,9 @@ export interface VideoCreateResponse {
 }
 
 export interface VideoCreateParams {
-  prompt: string;
+  inputImageUrl: string;
 
-  inputImageUrl?: string;
+  prompt: string;
 }
 
 export declare namespace Videos {

@@ -24,6 +24,40 @@ export class Images extends APIResource {
 
 export interface ImageCreateResponse {
   id: string;
+
+  createdAt: string;
+
+  dimensions: 'SQUARE' | 'PORTRAIT' | 'LANDSCAPE';
+
+  lora: ImageCreateResponse.Lora | null;
+
+  numImages: number;
+
+  prompt: string;
+
+  secondaryLora: ImageCreateResponse.SecondaryLora | null;
+
+  status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+
+  type: 'IMAGE' | 'VIDEO' | 'EDIT' | 'REMIX' | 'INPAINT' | 'UPSCALE';
+
+  updatedAt: string;
+
+  outputUrls?: Array<string>;
+}
+
+export namespace ImageCreateResponse {
+  export interface Lora {
+    id: string;
+
+    name: string;
+  }
+
+  export interface SecondaryLora {
+    id: string;
+
+    name: string;
+  }
 }
 
 export interface ImageEditResponse {
