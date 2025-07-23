@@ -1,5 +1,5 @@
 {
-  "name": "weights",
+  "name": "@weights-ai/sdk",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Weights API",
   "author": "Weights <>",
@@ -47,8 +47,8 @@
     "typescript-eslint": "8.31.1"
   },
   "imports": {
-    "weights": ".",
-    "weights/*": "./src/*"
+    "@weights-ai/sdk": ".",
+    "@weights-ai/sdk/*": "./src/*"
   },
   "exports": {
     ".": {

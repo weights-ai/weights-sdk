@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "weights/*": ["dist/src/*"],
-      "weights": ["dist/src/index.ts"]
+      "@weights-ai/sdk/*": ["dist/src/*"],
+      "@weights-ai/sdk": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

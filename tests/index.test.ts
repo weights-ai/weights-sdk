@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'weights/core/api-promise';
+import { APIPromise } from '@weights-ai/sdk/core/api-promise';
 
 import util from 'node:util';
-import Weights from 'weights';
-import { APIUserAbortError } from 'weights';
+import Weights from '@weights-ai/sdk';
+import { APIUserAbortError } from '@weights-ai/sdk';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {

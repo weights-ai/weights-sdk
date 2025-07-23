@@ -1,6 +1,6 @@
 # Weights TypeScript API Library
 
-[![NPM version](<https://img.shields.io/npm/v/weights.svg?label=npm%20(stable)>)](https://npmjs.org/package/weights) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/weights)
+[![NPM version](<https://img.shields.io/npm/v/@weights-ai/sdk.svg?label=npm%20(stable)>)](https://npmjs.org/package/@weights-ai/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@weights-ai/sdk)
 
 This library provides convenient access to the Weights REST API from server-side TypeScript or JavaScript.
 
@@ -11,11 +11,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:weights-ai/weights-sdk.git
+npm install @weights-ai/sdk
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install weights`
 
 ## Usage
 
@@ -23,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Weights from 'weights';
+import Weights from '@weights-ai/sdk';
 
 const client = new Weights({
   bearerToken: process.env['WEIGHTS_BEARER_TOKEN'], // This is the default and can be omitted
@@ -40,7 +37,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Weights from 'weights';
+import Weights from '@weights-ai/sdk';
 
 const client = new Weights({
   bearerToken: process.env['WEIGHTS_BEARER_TOKEN'], // This is the default and can be omitted
@@ -165,7 +162,7 @@ The log level can be configured in two ways:
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import Weights from 'weights';
+import Weights from '@weights-ai/sdk';
 
 const client = new Weights({
   logLevel: 'debug', // Show all log messages
@@ -193,7 +190,7 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import Weights from 'weights';
+import Weights from '@weights-ai/sdk';
 import pino from 'pino';
 
 const logger = pino();
@@ -262,7 +259,7 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import Weights from 'weights';
+import Weights from '@weights-ai/sdk';
 import fetch from 'my-fetch';
 
 const client = new Weights({ fetch });
@@ -273,7 +270,7 @@ const client = new Weights({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import Weights from 'weights';
+import Weights from '@weights-ai/sdk';
 
 const client = new Weights({
   fetchOptions: {
@@ -290,7 +287,7 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import Weights from 'weights';
+import Weights from '@weights-ai/sdk';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
@@ -304,7 +301,7 @@ const client = new Weights({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import Weights from 'weights';
+import Weights from '@weights-ai/sdk';
 
 const client = new Weights({
   fetchOptions: {
@@ -316,7 +313,7 @@ const client = new Weights({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import Weights from 'npm:weights';
+import Weights from 'npm:@weights-ai/sdk';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
 const client = new Weights({
