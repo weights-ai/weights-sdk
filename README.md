@@ -26,9 +26,9 @@ const client = new Weights({
   bearerToken: process.env['WEIGHTS_BEARER_TOKEN'], // This is the default and can be omitted
 });
 
-const cover = await client.covers.create({ inputUrl: 'inputUrl', rvcModelId: 'rvcModelId' });
+const user = await client.user.retrieve();
 
-console.log(cover.id);
+console.log(user.user);
 ```
 
 ### Request & Response types
@@ -43,8 +43,7 @@ const client = new Weights({
   bearerToken: process.env['WEIGHTS_BEARER_TOKEN'], // This is the default and can be omitted
 });
 
-const params: Weights.CoverCreateParams = { inputUrl: 'inputUrl', rvcModelId: 'rvcModelId' };
-const cover: Weights.CoverCreateResponse = await client.covers.create(params);
+const user: Weights.UserRetrieveResponse = await client.user.retrieve();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -57,17 +56,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const cover = await client.covers
-  .create({ inputUrl: 'inputUrl', rvcModelId: 'rvcModelId' })
-  .catch(async (err) => {
-    if (err instanceof Weights.APIError) {
-      console.log(err.status); // 400
-      console.log(err.name); // BadRequestError
-      console.log(err.headers); // {server: 'nginx', ...}
-    } else {
-      throw err;
-    }
-  });
+const user = await client.user.retrieve().catch(async (err) => {
+  if (err instanceof Weights.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
@@ -99,7 +96,7 @@ const client = new Weights({
 });
 
 // Or, configure per-request:
-await client.covers.create({ inputUrl: 'inputUrl', rvcModelId: 'rvcModelId' }, {
+await client.user.retrieve({
   maxRetries: 5,
 });
 ```
@@ -116,7 +113,7 @@ const client = new Weights({
 });
 
 // Override per-request:
-await client.covers.create({ inputUrl: 'inputUrl', rvcModelId: 'rvcModelId' }, {
+await client.user.retrieve({
   timeout: 5 * 1000,
 });
 ```
@@ -139,15 +136,13 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Weights();
 
-const response = await client.covers.create({ inputUrl: 'inputUrl', rvcModelId: 'rvcModelId' }).asResponse();
+const response = await client.user.retrieve().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: cover, response: raw } = await client.covers
-  .create({ inputUrl: 'inputUrl', rvcModelId: 'rvcModelId' })
-  .withResponse();
+const { data: user, response: raw } = await client.user.retrieve().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(cover.id);
+console.log(user.user);
 ```
 
 ### Logging
@@ -227,7 +222,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.covers.create({
+client.user.retrieve({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',

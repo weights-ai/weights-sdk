@@ -1,16 +1,12 @@
-# Covers
+# User
 
 Types:
 
-- <code><a href="./src/resources/covers.ts">CoverCreateResponse</a></code>
-- <code><a href="./src/resources/covers.ts">CoverRetrieveResponse</a></code>
-- <code><a href="./src/resources/covers.ts">CoverListResponse</a></code>
+- <code><a href="./src/resources/user.ts">UserRetrieveResponse</a></code>
 
 Methods:
 
-- <code title="post /covers/create">client.covers.<a href="./src/resources/covers.ts">create</a>({ ...params }) -> CoverCreateResponse</code>
-- <code title="get /covers/{id}">client.covers.<a href="./src/resources/covers.ts">retrieve</a>(id) -> CoverRetrieveResponse | null</code>
-- <code title="get /covers">client.covers.<a href="./src/resources/covers.ts">list</a>({ ...params }) -> CoverListResponse</code>
+- <code title="get /user">client.user.<a href="./src/resources/user.ts">retrieve</a>() -> UserRetrieveResponse</code>
 
 # Images
 
@@ -56,6 +52,20 @@ Methods:
 - <code title="get /image-lora-models/{id}/status">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">retrieveStatus</a>(id) -> ImageLoraModelRetrieveStatusResponse | null</code>
 - <code title="get /image-lora-models/search">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">search</a>({ ...params }) -> ImageLoraModelSearchResponse</code>
 
+# Covers
+
+Types:
+
+- <code><a href="./src/resources/covers.ts">CoverCreateResponse</a></code>
+- <code><a href="./src/resources/covers.ts">CoverRetrieveResponse</a></code>
+- <code><a href="./src/resources/covers.ts">CoverListResponse</a></code>
+
+Methods:
+
+- <code title="post /covers/create">client.covers.<a href="./src/resources/covers.ts">create</a>({ ...params }) -> CoverCreateResponse</code>
+- <code title="get /covers/{id}">client.covers.<a href="./src/resources/covers.ts">retrieve</a>(id) -> CoverRetrieveResponse | null</code>
+- <code title="get /covers">client.covers.<a href="./src/resources/covers.ts">list</a>({ ...params }) -> CoverListResponse</code>
+
 # RvcModels
 
 Types:
@@ -99,13 +109,3 @@ Methods:
 - <code title="post /songs/create">client.songs.<a href="./src/resources/songs.ts">create</a>({ ...params }) -> SongCreateResponse</code>
 - <code title="get /songs/{id}">client.songs.<a href="./src/resources/songs.ts">retrieve</a>(id) -> SongRetrieveResponse | null</code>
 - <code title="get /songs">client.songs.<a href="./src/resources/songs.ts">list</a>({ ...params }) -> SongListResponse</code>
-
-# User
-
-Types:
-
-- <code><a href="./src/resources/user.ts">UserRetrieveResponse</a></code>
-
-Methods:
-
-- <code title="get /user">client.user.<a href="./src/resources/user.ts">retrieve</a>() -> UserRetrieveResponse</code>
