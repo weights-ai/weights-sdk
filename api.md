@@ -5,14 +5,12 @@ Types:
 - <code><a href="./src/resources/images.ts">ImageCreateResponse</a></code>
 - <code><a href="./src/resources/images.ts">ImageRetrieveResponse</a></code>
 - <code><a href="./src/resources/images.ts">ImageListResponse</a></code>
-- <code><a href="./src/resources/images.ts">ImageEditResponse</a></code>
 
 Methods:
 
 - <code title="post /images/create">client.images.<a href="./src/resources/images.ts">create</a>({ ...params }) -> ImageCreateResponse</code>
 - <code title="get /images/{id}">client.images.<a href="./src/resources/images.ts">retrieve</a>(id) -> ImageRetrieveResponse</code>
 - <code title="get /images">client.images.<a href="./src/resources/images.ts">list</a>({ ...params }) -> ImageListResponse</code>
-- <code title="post /images/edit">client.images.<a href="./src/resources/images.ts">edit</a>({ ...params }) -> ImageEditResponse</code>
 
 # Videos
 

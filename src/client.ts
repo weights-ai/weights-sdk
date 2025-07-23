@@ -38,8 +38,6 @@ import {
 import {
   ImageCreateParams,
   ImageCreateResponse,
-  ImageEditParams,
-  ImageEditResponse,
   ImageListParams,
   ImageListResponse,
   ImageRetrieveResponse,
@@ -779,10 +777,8 @@ export declare namespace Weights {
     type ImageCreateResponse as ImageCreateResponse,
     type ImageRetrieveResponse as ImageRetrieveResponse,
     type ImageListResponse as ImageListResponse,
-    type ImageEditResponse as ImageEditResponse,
     type ImageCreateParams as ImageCreateParams,
     type ImageListParams as ImageListParams,
-    type ImageEditParams as ImageEditParams,
   };
 
   export {

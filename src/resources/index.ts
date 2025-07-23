@@ -24,10 +24,8 @@ export {
   type ImageCreateResponse,
   type ImageRetrieveResponse,
   type ImageListResponse,
-  type ImageEditResponse,
   type ImageCreateParams,
   type ImageListParams,
-  type ImageEditParams,
 } from './images';
 export {
   RvcModels,
