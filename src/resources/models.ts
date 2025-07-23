@@ -16,6 +16,7 @@ export class Models extends APIResource {
   /**
    * Retrieves all RVC models for the authenticated user, returned in descending
    * order by creation date. Pagination is supported through a cursor-based approach.
+   * Optionally filter results by title search.
    */
   list(
     query: ModelListParams | null | undefined = {},
@@ -59,6 +60,8 @@ export interface ModelListParams {
   cursor?: string | null;
 
   limit?: number;
+
+  search?: string;
 }
 
 export declare namespace Models {

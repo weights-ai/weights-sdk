@@ -41,7 +41,10 @@ describe('resource models', () => {
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.models.list({ cursor: 'cursor', limit: 1 }, { path: '/_stainless_unknown_path' }),
+      client.models.list(
+        { cursor: 'cursor', limit: 1, search: 'search' },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Weights.NotFoundError);
   });
 });
