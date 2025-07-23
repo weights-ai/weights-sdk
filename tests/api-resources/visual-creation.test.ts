@@ -7,10 +7,10 @@ const client = new Weights({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource models', () => {
+describe('resource visualCreation', () => {
   // skipped: tests are disabled for the time being
-  test.skip('create: only required params', async () => {
-    const responsePromise = client.models.create({ description: 'description', title: 'title', url: 'url' });
+  test.skip('retrieve', async () => {
+    const responsePromise = client.visualCreation.retrieve('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,13 +21,8 @@ describe('resource models', () => {
   });
 
   // skipped: tests are disabled for the time being
-  test.skip('create: required and optional params', async () => {
-    const response = await client.models.create({ description: 'description', title: 'title', url: 'url' });
-  });
-
-  // skipped: tests are disabled for the time being
   test.skip('list', async () => {
-    const responsePromise = client.models.list();
+    const responsePromise = client.visualCreation.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -41,27 +36,7 @@ describe('resource models', () => {
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.models.list(
-        { cursor: 'cursor', limit: 1, search: 'search' },
-        { path: '/_stainless_unknown_path' },
-      ),
+      client.visualCreation.list({ cursor: 'cursor', limit: 1 }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Weights.NotFoundError);
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('search: only required params', async () => {
-    const responsePromise = client.models.search({ search: 'x' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('search: required and optional params', async () => {
-    const response = await client.models.search({ search: 'x', cursor: 'cursor', limit: 1 });
   });
 });

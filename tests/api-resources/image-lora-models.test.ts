@@ -7,10 +7,19 @@ const client = new Weights({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource models', () => {
+describe('resource imageLoraModels', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.models.create({ description: 'description', title: 'title', url: 'url' });
+    const responsePromise = client.imageLoraModels.create({
+      images: [
+        { url: 'https://example.com' },
+        { url: 'https://example.com' },
+        { url: 'https://example.com' },
+        { url: 'https://example.com' },
+        { url: 'https://example.com' },
+      ],
+      name: 'x',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,12 +31,36 @@ describe('resource models', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
-    const response = await client.models.create({ description: 'description', title: 'title', url: 'url' });
+    const response = await client.imageLoraModels.create({
+      images: [
+        { url: 'https://example.com', description: 'description' },
+        { url: 'https://example.com', description: 'description' },
+        { url: 'https://example.com', description: 'description' },
+        { url: 'https://example.com', description: 'description' },
+        { url: 'https://example.com', description: 'description' },
+      ],
+      name: 'x',
+      isPublic: true,
+      triggerWord: 'triggerWord',
+      validationPrompt: 'validationPrompt',
+    });
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('retrieve', async () => {
+    const responsePromise = client.imageLoraModels.retrieve('id');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   // skipped: tests are disabled for the time being
   test.skip('list', async () => {
-    const responsePromise = client.models.list();
+    const responsePromise = client.imageLoraModels.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -41,7 +74,7 @@ describe('resource models', () => {
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.models.list(
+      client.imageLoraModels.list(
         { cursor: 'cursor', limit: 1, search: 'search' },
         { path: '/_stainless_unknown_path' },
       ),
@@ -49,8 +82,20 @@ describe('resource models', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('retrieveStatus', async () => {
+    const responsePromise = client.imageLoraModels.retrieveStatus('id');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('search: only required params', async () => {
-    const responsePromise = client.models.search({ search: 'x' });
+    const responsePromise = client.imageLoraModels.search({ search: 'x' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -62,6 +107,6 @@ describe('resource models', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('search: required and optional params', async () => {
-    const response = await client.models.search({ search: 'x', cursor: 'cursor', limit: 1 });
+    const response = await client.imageLoraModels.search({ search: 'x', cursor: 'cursor', limit: 1 });
   });
 });
