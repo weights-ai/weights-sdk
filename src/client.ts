@@ -762,25 +762,23 @@ export class Weights {
 
   static toFile = Uploads.toFile;
 
-  user: API.User = new API.User(this);
   images: API.Images = new API.Images(this);
   videos: API.Videos = new API.Videos(this);
   imageLoraModels: API.ImageLoraModels = new API.ImageLoraModels(this);
   covers: API.Covers = new API.Covers(this);
   rvcModels: API.RvcModels = new API.RvcModels(this);
   songs: API.Songs = new API.Songs(this);
+  user: API.User = new API.User(this);
 }
-Weights.User = User;
 Weights.Images = Images;
 Weights.Videos = Videos;
 Weights.ImageLoraModels = ImageLoraModels;
 Weights.Covers = Covers;
 Weights.RvcModels = RvcModels;
 Weights.Songs = Songs;
+Weights.User = User;
 export declare namespace Weights {
   export type RequestOptions = Opts.RequestOptions;
-
-  export { User as User, type UserRetrieveResponse as UserRetrieveResponse };
 
   export {
     Images as Images,
@@ -839,4 +837,6 @@ export declare namespace Weights {
     type SongCreateParams as SongCreateParams,
     type SongListParams as SongListParams,
   };
+
+  export { User as User, type UserRetrieveResponse as UserRetrieveResponse };
 }

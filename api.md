@@ -1,13 +1,3 @@
-# User
-
-Types:
-
-- <code><a href="./src/resources/user.ts">UserRetrieveResponse</a></code>
-
-Methods:
-
-- <code title="get /user">client.user.<a href="./src/resources/user.ts">retrieve</a>() -> UserRetrieveResponse</code>
-
 # Images
 
 Types:
@@ -109,3 +99,13 @@ Methods:
 - <code title="post /songs/create">client.songs.<a href="./src/resources/songs.ts">create</a>({ ...params }) -> SongCreateResponse</code>
 - <code title="get /songs/{id}">client.songs.<a href="./src/resources/songs.ts">retrieve</a>(id) -> SongRetrieveResponse | null</code>
 - <code title="get /songs">client.songs.<a href="./src/resources/songs.ts">list</a>({ ...params }) -> SongListResponse</code>
+
+# User
+
+Types:
+
+- <code><a href="./src/resources/user.ts">UserRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="get /user">client.user.<a href="./src/resources/user.ts">retrieve</a>() -> UserRetrieveResponse</code>
