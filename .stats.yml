@@ -1,4 +1,4 @@
-configured_endpoints: 12
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/jonluca%2Fweights-b47fc56e149bb1e6541c7c64a28250b7c37aade14fb85fc9cca6e9dc706182f5.yml
-openapi_spec_hash: a88d2ea5d4d591d93c4b3f53b2aaf374
-config_hash: 8a6a96d2bc3d463cca778a63e767120e
+configured_endpoints: 24
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/jonluca%2Fweights-b079de428ef3ed039041b44c63aa91060b14307e0a776bc42c5e3faff511c565.yml
+openapi_spec_hash: f67c39221c016d19c463b44bcc15f0f3
+config_hash: 1c23e93703c079cf2c33d2b60113b647
