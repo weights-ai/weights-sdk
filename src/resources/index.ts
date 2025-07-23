@@ -3,11 +3,11 @@
 export {
   Covers,
   type CoverCreateResponse,
+  type CoverRetrieveResponse,
   type CoverListResponse,
   type CoverCreateParams,
   type CoverListParams,
 } from './covers';
-export { GenerateSong } from './generate-song';
 export {
   ImageLoraModels,
   type ImageLoraModelCreateResponse,
@@ -22,15 +22,30 @@ export {
 export {
   Images,
   type ImageCreateResponse,
+  type ImageRetrieveResponse,
+  type ImageListResponse,
   type ImageEditResponse,
   type ImageCreateParams,
+  type ImageListParams,
   type ImageEditParams,
 } from './images';
-export { Models } from './models';
-export { Songs, type SongListResponse, type SongListParams } from './songs';
-export { StemAudio } from './stem-audio';
-export { StemmedAudio } from './stemmed-audio';
-export { Usage } from './usage';
+export {
+  RvcModels,
+  type RvcModelListResponse,
+  type RvcModelRetrieveUploadedResponse,
+  type RvcModelSearchResponse,
+  type RvcModelUploadResponse,
+  type RvcModelListParams,
+  type RvcModelSearchParams,
+  type RvcModelUploadParams,
+} from './rvc-models/rvc-models';
+export {
+  Songs,
+  type SongCreateResponse,
+  type SongRetrieveResponse,
+  type SongListResponse,
+  type SongCreateParams,
+  type SongListParams,
+} from './songs';
 export { User, type UserRetrieveResponse } from './user';
 export { Videos, type VideoCreateResponse, type VideoCreateParams } from './videos';
-export { VisualCreation } from './visual-creation';
