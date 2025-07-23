@@ -31,14 +31,6 @@ export class Images extends APIResource {
   ): APIPromise<ImageListResponse> {
     return this._client.get('/images', { query, ...options });
   }
-
-  /**
-   * Creates a new image edit job using the provided prompt and input image. The job
-   * will be queued for processing.
-   */
-  edit(body: ImageEditParams, options?: RequestOptions): APIPromise<ImageEditResponse> {
-    return this._client.post('/images/edit', { body, ...options });
-  }
 }
 
 export interface ImageCreateResponse {
@@ -143,10 +135,6 @@ export namespace ImageListResponse {
   }
 }
 
-export interface ImageEditResponse {
-  id: string;
-}
-
 export interface ImageCreateParams {
   prompt: string;
 
@@ -167,20 +155,12 @@ export interface ImageListParams {
   limit?: number;
 }
 
-export interface ImageEditParams {
-  inputImageUrl: string;
-
-  prompt: string;
-}
-
 export declare namespace Images {
   export {
     type ImageCreateResponse as ImageCreateResponse,
     type ImageRetrieveResponse as ImageRetrieveResponse,
     type ImageListResponse as ImageListResponse,
-    type ImageEditResponse as ImageEditResponse,
     type ImageCreateParams as ImageCreateParams,
     type ImageListParams as ImageListParams,
-    type ImageEditParams as ImageEditParams,
   };
 }
