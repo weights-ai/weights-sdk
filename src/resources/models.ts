@@ -24,6 +24,14 @@ export class Models extends APIResource {
   ): APIPromise<ModelListResponse> {
     return this._client.get('/models', { query, ...options });
   }
+
+  /**
+   * Searches through all public RVC models in the database. Results are sorted by
+   * relevance and creation date. This endpoint does not require authentication.
+   */
+  search(query: ModelSearchParams, options?: RequestOptions): APIPromise<ModelSearchResponse> {
+    return this._client.get('/models/search', { query, ...options });
+  }
 }
 
 export interface ModelCreateResponse {
@@ -39,6 +47,20 @@ export interface ModelListResponse {
 }
 
 export namespace ModelListResponse {
+  export interface Model {
+    id: string;
+
+    createdAt: string;
+
+    title: string;
+  }
+}
+
+export interface ModelSearchResponse {
+  models: Array<ModelSearchResponse.Model>;
+}
+
+export namespace ModelSearchResponse {
   export interface Model {
     id: string;
 
@@ -64,11 +86,21 @@ export interface ModelListParams {
   search?: string;
 }
 
+export interface ModelSearchParams {
+  search: string;
+
+  cursor?: string | null;
+
+  limit?: number;
+}
+
 export declare namespace Models {
   export {
     type ModelCreateResponse as ModelCreateResponse,
     type ModelListResponse as ModelListResponse,
+    type ModelSearchResponse as ModelSearchResponse,
     type ModelCreateParams as ModelCreateParams,
     type ModelListParams as ModelListParams,
+    type ModelSearchParams as ModelSearchParams,
   };
 }

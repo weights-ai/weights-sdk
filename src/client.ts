@@ -29,10 +29,30 @@ import {
   GenerateSongCreateResponse,
 } from './resources/generate-song';
 import {
+  ImageLoraModelCreateParams,
+  ImageLoraModelCreateResponse,
+  ImageLoraModelListParams,
+  ImageLoraModelListResponse,
+  ImageLoraModelRetrieveResponse,
+  ImageLoraModelRetrieveStatusResponse,
+  ImageLoraModelSearchParams,
+  ImageLoraModelSearchResponse,
+  ImageLoraModels,
+} from './resources/image-lora-models';
+import {
+  ImageCreateParams,
+  ImageCreateResponse,
+  ImageEditParams,
+  ImageEditResponse,
+  Images,
+} from './resources/images';
+import {
   ModelCreateParams,
   ModelCreateResponse,
   ModelListParams,
   ModelListResponse,
+  ModelSearchParams,
+  ModelSearchResponse,
   Models,
 } from './resources/models';
 import {
@@ -50,6 +70,13 @@ import {
 } from './resources/stemmed-audio';
 import { Usage, UsageRetrieveResponse } from './resources/usage';
 import { User, UserRetrieveResponse } from './resources/user';
+import { VideoCreateParams, VideoCreateResponse, Videos } from './resources/videos';
+import {
+  VisualCreation,
+  VisualCreationListParams,
+  VisualCreationListResponse,
+  VisualCreationRetrieveResponse,
+} from './resources/visual-creation';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -755,6 +782,10 @@ export class Weights {
   usage: API.Usage = new API.Usage(this);
   user: API.User = new API.User(this);
   songs: API.Songs = new API.Songs(this);
+  imageLoraModels: API.ImageLoraModels = new API.ImageLoraModels(this);
+  images: API.Images = new API.Images(this);
+  videos: API.Videos = new API.Videos(this);
+  visualCreation: API.VisualCreation = new API.VisualCreation(this);
 }
 Weights.GenerateSong = GenerateSong;
 Weights.StemAudio = StemAudio;
@@ -764,6 +795,10 @@ Weights.Models = Models;
 Weights.Usage = Usage;
 Weights.User = User;
 Weights.Songs = Songs;
+Weights.ImageLoraModels = ImageLoraModels;
+Weights.Images = Images;
+Weights.Videos = Videos;
+Weights.VisualCreation = VisualCreation;
 export declare namespace Weights {
   export type RequestOptions = Opts.RequestOptions;
 
@@ -797,8 +832,10 @@ export declare namespace Weights {
     Models as Models,
     type ModelCreateResponse as ModelCreateResponse,
     type ModelListResponse as ModelListResponse,
+    type ModelSearchResponse as ModelSearchResponse,
     type ModelCreateParams as ModelCreateParams,
     type ModelListParams as ModelListParams,
+    type ModelSearchParams as ModelSearchParams,
   };
 
   export { Usage as Usage, type UsageRetrieveResponse as UsageRetrieveResponse };
@@ -811,5 +848,38 @@ export declare namespace Weights {
     type SongListResponse as SongListResponse,
     type SongRetrieveParams as SongRetrieveParams,
     type SongListParams as SongListParams,
+  };
+
+  export {
+    ImageLoraModels as ImageLoraModels,
+    type ImageLoraModelCreateResponse as ImageLoraModelCreateResponse,
+    type ImageLoraModelRetrieveResponse as ImageLoraModelRetrieveResponse,
+    type ImageLoraModelListResponse as ImageLoraModelListResponse,
+    type ImageLoraModelRetrieveStatusResponse as ImageLoraModelRetrieveStatusResponse,
+    type ImageLoraModelSearchResponse as ImageLoraModelSearchResponse,
+    type ImageLoraModelCreateParams as ImageLoraModelCreateParams,
+    type ImageLoraModelListParams as ImageLoraModelListParams,
+    type ImageLoraModelSearchParams as ImageLoraModelSearchParams,
+  };
+
+  export {
+    Images as Images,
+    type ImageCreateResponse as ImageCreateResponse,
+    type ImageEditResponse as ImageEditResponse,
+    type ImageCreateParams as ImageCreateParams,
+    type ImageEditParams as ImageEditParams,
+  };
+
+  export {
+    Videos as Videos,
+    type VideoCreateResponse as VideoCreateResponse,
+    type VideoCreateParams as VideoCreateParams,
+  };
+
+  export {
+    VisualCreation as VisualCreation,
+    type VisualCreationRetrieveResponse as VisualCreationRetrieveResponse,
+    type VisualCreationListResponse as VisualCreationListResponse,
+    type VisualCreationListParams as VisualCreationListParams,
   };
 }
