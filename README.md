@@ -6,8 +6,6 @@ This library provides convenient access to the Weights REST API from server-side
 
 The REST API documentation can be found on [weights.readme.io](https://weights.readme.io/reference/introduction). The full API of this library can be found in [api.md](api.md).
 
-It is generated with [Stainless](https://www.stainless.com/).
-
 ## Installation
 
 ```sh
