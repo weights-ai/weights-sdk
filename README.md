@@ -26,9 +26,9 @@ const client = new Weights({
   bearerToken: process.env['WEIGHTS_BEARER_TOKEN'], // This is the default and can be omitted
 });
 
-const user = await client.user.retrieve();
+const image = await client.images.create({ prompt: 'REPLACE_ME' });
 
-console.log(user.user);
+console.log(image.id);
 ```
 
 ### Request & Response types
@@ -43,7 +43,8 @@ const client = new Weights({
   bearerToken: process.env['WEIGHTS_BEARER_TOKEN'], // This is the default and can be omitted
 });
 
-const user: Weights.UserRetrieveResponse = await client.user.retrieve();
+const params: Weights.ImageCreateParams = { prompt: 'REPLACE_ME' };
+const image: Weights.ImageCreateResponse = await client.images.create(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -56,7 +57,7 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const user = await client.user.retrieve().catch(async (err) => {
+const image = await client.images.create({ prompt: 'REPLACE_ME' }).catch(async (err) => {
   if (err instanceof Weights.APIError) {
     console.log(err.status); // 400
     console.log(err.name); // BadRequestError
@@ -96,7 +97,7 @@ const client = new Weights({
 });
 
 // Or, configure per-request:
-await client.user.retrieve({
+await client.images.create({ prompt: 'REPLACE_ME' }, {
   maxRetries: 5,
 });
 ```
@@ -113,7 +114,7 @@ const client = new Weights({
 });
 
 // Override per-request:
-await client.user.retrieve({
+await client.images.create({ prompt: 'REPLACE_ME' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -136,13 +137,13 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Weights();
 
-const response = await client.user.retrieve().asResponse();
+const response = await client.images.create({ prompt: 'REPLACE_ME' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: user, response: raw } = await client.user.retrieve().withResponse();
+const { data: image, response: raw } = await client.images.create({ prompt: 'REPLACE_ME' }).withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(user.user);
+console.log(image.id);
 ```
 
 ### Logging
@@ -222,7 +223,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.user.retrieve({
+client.images.create({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
