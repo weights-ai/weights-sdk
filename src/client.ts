@@ -174,7 +174,7 @@ export class Weights {
   /**
    * API Client for interfacing with the Weights API.
    *
-   * @param {string | undefined} [opts.bearerToken=process.env['WEIGHTS_BEARER_TOKEN'] ?? undefined]
+   * @param {string | undefined} [opts.bearerToken=process.env['WEIGHTS_BEARER_TOKEN'] ?? process.env.WEIGHTS_BEARER_TOKEN]
    * @param {string} [opts.baseURL=process.env['WEIGHTS_BASE_URL'] ?? https://www.weights.com/api/external] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
@@ -185,15 +185,9 @@ export class Weights {
    */
   constructor({
     baseURL = readEnv('WEIGHTS_BASE_URL'),
-    bearerToken = readEnv('WEIGHTS_BEARER_TOKEN'),
+    bearerToken = readEnv('WEIGHTS_BEARER_TOKEN') ?? 'process.env.WEIGHTS_BEARER_TOKEN',
     ...opts
   }: ClientOptions = {}) {
-    if (bearerToken === undefined) {
-      throw new Errors.WeightsError(
-        "The WEIGHTS_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Weights client with an bearerToken option, like new Weights({ bearerToken: 'My Bearer Token' }).",
-      );
-    }
-
     const options: ClientOptions = {
       bearerToken,
       ...opts,
