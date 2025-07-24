@@ -29,6 +29,15 @@ export class RvcModels extends APIResource {
   }
 
   /**
+   * Retrieves a signed download URL for a trained RVC model. The model must belong
+   * to the authenticated user and must have been trained via the API. The URL
+   * expires in 5 minutes.
+   */
+  retrieveDownloadURL(id: string, options?: RequestOptions): APIPromise<RvcModelRetrieveDownloadURLResponse> {
+    return this._client.get(path`/rvc-models/${id}/download`, options);
+  }
+
+  /**
    * Retrieves the details of a specific uploaded RVC model by its ID. Returns null
    * if the model is not found or doesn't belong to the authenticated user.
    */
@@ -146,6 +155,10 @@ export namespace RvcModelListResponse {
   }
 }
 
+export interface RvcModelRetrieveDownloadURLResponse {
+  downloadUrl: string | null;
+}
+
 export interface RvcModelRetrieveUploadedResponse {
   id: string;
 
@@ -205,6 +218,7 @@ RvcModels.Training = Training;
 export declare namespace RvcModels {
   export {
     type RvcModelListResponse as RvcModelListResponse,
+    type RvcModelRetrieveDownloadURLResponse as RvcModelRetrieveDownloadURLResponse,
     type RvcModelRetrieveUploadedResponse as RvcModelRetrieveUploadedResponse,
     type RvcModelSearchResponse as RvcModelSearchResponse,
     type RvcModelUploadResponse as RvcModelUploadResponse,
