@@ -13,6 +13,7 @@ export {
   type ImageLoraModelCreateResponse,
   type ImageLoraModelRetrieveResponse,
   type ImageLoraModelListResponse,
+  type ImageLoraModelRetrieveDownloadURLResponse,
   type ImageLoraModelRetrieveStatusResponse,
   type ImageLoraModelSearchResponse,
   type ImageLoraModelCreateParams,
@@ -24,14 +25,13 @@ export {
   type ImageCreateResponse,
   type ImageRetrieveResponse,
   type ImageListResponse,
-  type ImageEditResponse,
   type ImageCreateParams,
   type ImageListParams,
-  type ImageEditParams,
 } from './images';
 export {
   RvcModels,
   type RvcModelListResponse,
+  type RvcModelRetrieveDownloadURLResponse,
   type RvcModelRetrieveUploadedResponse,
   type RvcModelSearchResponse,
   type RvcModelUploadResponse,

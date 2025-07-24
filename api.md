@@ -5,14 +5,12 @@ Types:
 - <code><a href="./src/resources/images.ts">ImageCreateResponse</a></code>
 - <code><a href="./src/resources/images.ts">ImageRetrieveResponse</a></code>
 - <code><a href="./src/resources/images.ts">ImageListResponse</a></code>
-- <code><a href="./src/resources/images.ts">ImageEditResponse</a></code>
 
 Methods:
 
 - <code title="post /images/create">client.images.<a href="./src/resources/images.ts">create</a>({ ...params }) -> ImageCreateResponse</code>
 - <code title="get /images/{id}">client.images.<a href="./src/resources/images.ts">retrieve</a>(id) -> ImageRetrieveResponse</code>
 - <code title="get /images">client.images.<a href="./src/resources/images.ts">list</a>({ ...params }) -> ImageListResponse</code>
-- <code title="post /images/edit">client.images.<a href="./src/resources/images.ts">edit</a>({ ...params }) -> ImageEditResponse</code>
 
 # Videos
 
@@ -31,6 +29,7 @@ Types:
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelCreateResponse</a></code>
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelRetrieveResponse</a></code>
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelListResponse</a></code>
+- <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelRetrieveDownloadURLResponse</a></code>
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelRetrieveStatusResponse</a></code>
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelSearchResponse</a></code>
 
@@ -39,6 +38,7 @@ Methods:
 - <code title="post /image-lora-models/create">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">create</a>({ ...params }) -> ImageLoraModelCreateResponse</code>
 - <code title="get /image-lora-models/{id}">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">retrieve</a>(id) -> ImageLoraModelRetrieveResponse | null</code>
 - <code title="get /image-lora-models">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">list</a>({ ...params }) -> ImageLoraModelListResponse</code>
+- <code title="get /image-lora-models/{id}/download">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">retrieveDownloadURL</a>(id) -> ImageLoraModelRetrieveDownloadURLResponse</code>
 - <code title="get /image-lora-models/{id}/status">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">retrieveStatus</a>(id) -> ImageLoraModelRetrieveStatusResponse | null</code>
 - <code title="get /image-lora-models/search">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">search</a>({ ...params }) -> ImageLoraModelSearchResponse</code>
 
@@ -61,6 +61,7 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelListResponse</a></code>
+- <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelRetrieveDownloadURLResponse</a></code>
 - <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelRetrieveUploadedResponse</a></code>
 - <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelSearchResponse</a></code>
 - <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelUploadResponse</a></code>
@@ -68,6 +69,7 @@ Types:
 Methods:
 
 - <code title="get /rvc-models">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">list</a>({ ...params }) -> RvcModelListResponse</code>
+- <code title="get /rvc-models/{id}/download">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">retrieveDownloadURL</a>(id) -> RvcModelRetrieveDownloadURLResponse</code>
 - <code title="get /rvc-models/uploaded/{id}">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">retrieveUploaded</a>(id) -> RvcModelRetrieveUploadedResponse | null</code>
 - <code title="get /rvc-models/search">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">search</a>({ ...params }) -> RvcModelSearchResponse</code>
 - <code title="post /rvc-models/upload">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">upload</a>({ ...params }) -> RvcModelUploadResponse</code>
