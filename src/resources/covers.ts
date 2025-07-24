@@ -51,6 +51,8 @@ export interface CoverCreateResponse {
 
   preStemmed?: boolean | null;
 
+  queuePosition?: number | null;
+
   stemOnly?: boolean | null;
 
   ttsText?: string | null;
@@ -72,6 +74,8 @@ export interface CoverRetrieveResponse {
   pitch?: number | null;
 
   preStemmed?: boolean | null;
+
+  queuePosition?: number | null;
 
   stemOnly?: boolean | null;
 
@@ -99,6 +103,8 @@ export namespace CoverListResponse {
     pitch?: number | null;
 
     preStemmed?: boolean | null;
+
+    queuePosition?: number | null;
 
     stemOnly?: boolean | null;
 

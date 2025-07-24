@@ -132,6 +132,8 @@ export namespace ImageListResponse {
     updatedAt: string;
 
     outputUrls?: Array<string>;
+
+    queuePosition?: number | null;
   }
 }
 

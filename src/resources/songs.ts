@@ -58,6 +58,8 @@ export interface SongRetrieveResponse {
   status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 
   updatedAt: string;
+
+  queuePosition?: number | null;
 }
 
 export interface SongListResponse {
@@ -83,6 +85,8 @@ export namespace SongListResponse {
     status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 
     updatedAt: string;
+
+    queuePosition?: number | null;
   }
 }
 
