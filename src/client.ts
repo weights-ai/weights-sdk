@@ -56,6 +56,7 @@ import { VideoCreateParams, VideoCreateResponse, Videos } from './resources/vide
 import {
   RvcModelListParams,
   RvcModelListResponse,
+  RvcModelRetrieveDownloadURLResponse,
   RvcModelRetrieveUploadedResponse,
   RvcModelSearchParams,
   RvcModelSearchResponse,
@@ -811,6 +812,7 @@ export declare namespace Weights {
   export {
     RvcModels as RvcModels,
     type RvcModelListResponse as RvcModelListResponse,
+    type RvcModelRetrieveDownloadURLResponse as RvcModelRetrieveDownloadURLResponse,
     type RvcModelRetrieveUploadedResponse as RvcModelRetrieveUploadedResponse,
     type RvcModelSearchResponse as RvcModelSearchResponse,
     type RvcModelUploadResponse as RvcModelUploadResponse,

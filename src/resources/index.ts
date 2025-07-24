@@ -30,6 +30,7 @@ export {
 export {
   RvcModels,
   type RvcModelListResponse,
+  type RvcModelRetrieveDownloadURLResponse,
   type RvcModelRetrieveUploadedResponse,
   type RvcModelSearchResponse,
   type RvcModelUploadResponse,
