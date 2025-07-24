@@ -40,6 +40,18 @@ export class ImageLoraModels extends APIResource {
   }
 
   /**
+   * Retrieves a signed download URL for a trained Image LoRA model. The model must
+   * belong to the authenticated user and must have been trained via the API. The URL
+   * expires in 5 minutes.
+   */
+  retrieveDownloadURL(
+    id: string,
+    options?: RequestOptions,
+  ): APIPromise<ImageLoraModelRetrieveDownloadURLResponse> {
+    return this._client.get(path`/image-lora-models/${id}/download`, options);
+  }
+
+  /**
    * Retrieves the current training status of a specific image LoRA model. Useful for
    * polling the status of a training job. Returns null if the model is not found or
    * doesn't belong to the authenticated user.
@@ -159,6 +171,10 @@ export namespace ImageLoraModelListResponse {
   }
 }
 
+export interface ImageLoraModelRetrieveDownloadURLResponse {
+  downloadUrl: string | null;
+}
+
 export interface ImageLoraModelRetrieveStatusResponse {
   id: string;
 
@@ -260,6 +276,7 @@ export declare namespace ImageLoraModels {
     type ImageLoraModelCreateResponse as ImageLoraModelCreateResponse,
     type ImageLoraModelRetrieveResponse as ImageLoraModelRetrieveResponse,
     type ImageLoraModelListResponse as ImageLoraModelListResponse,
+    type ImageLoraModelRetrieveDownloadURLResponse as ImageLoraModelRetrieveDownloadURLResponse,
     type ImageLoraModelRetrieveStatusResponse as ImageLoraModelRetrieveStatusResponse,
     type ImageLoraModelSearchResponse as ImageLoraModelSearchResponse,
     type ImageLoraModelCreateParams as ImageLoraModelCreateParams,
