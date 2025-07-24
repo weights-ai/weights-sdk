@@ -13,6 +13,7 @@ export {
   type ImageLoraModelCreateResponse,
   type ImageLoraModelRetrieveResponse,
   type ImageLoraModelListResponse,
+  type ImageLoraModelRetrieveDownloadURLResponse,
   type ImageLoraModelRetrieveStatusResponse,
   type ImageLoraModelSearchResponse,
   type ImageLoraModelCreateParams,

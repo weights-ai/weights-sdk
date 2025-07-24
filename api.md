@@ -29,6 +29,7 @@ Types:
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelCreateResponse</a></code>
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelRetrieveResponse</a></code>
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelListResponse</a></code>
+- <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelRetrieveDownloadURLResponse</a></code>
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelRetrieveStatusResponse</a></code>
 - <code><a href="./src/resources/image-lora-models.ts">ImageLoraModelSearchResponse</a></code>
 
@@ -37,6 +38,7 @@ Methods:
 - <code title="post /image-lora-models/create">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">create</a>({ ...params }) -> ImageLoraModelCreateResponse</code>
 - <code title="get /image-lora-models/{id}">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">retrieve</a>(id) -> ImageLoraModelRetrieveResponse | null</code>
 - <code title="get /image-lora-models">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">list</a>({ ...params }) -> ImageLoraModelListResponse</code>
+- <code title="get /image-lora-models/{id}/download">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">retrieveDownloadURL</a>(id) -> ImageLoraModelRetrieveDownloadURLResponse</code>
 - <code title="get /image-lora-models/{id}/status">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">retrieveStatus</a>(id) -> ImageLoraModelRetrieveStatusResponse | null</code>
 - <code title="get /image-lora-models/search">client.imageLoraModels.<a href="./src/resources/image-lora-models.ts">search</a>({ ...params }) -> ImageLoraModelSearchResponse</code>
 
