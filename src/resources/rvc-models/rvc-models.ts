@@ -75,8 +75,6 @@ export namespace RvcModelListResponse {
 
     createdAt: string;
 
-    isPublic: boolean;
-
     name: string;
 
     type: 'uploaded' | 'training';
@@ -91,10 +89,6 @@ export namespace RvcModelListResponse {
 
     endTime?: string | null;
 
-    initialQueuePosition?: number | null;
-
-    isPremiumJob?: boolean | null;
-
     queuePosition?: number | null;
 
     runDeEchoDeReverb?: boolean | null;
@@ -106,8 +100,6 @@ export namespace RvcModelListResponse {
     rvcModelId?: string | null;
 
     shortStatusText?: string | null;
-
-    simplifiedTitle?: string | null;
 
     startTime?: string | null;
 
@@ -128,27 +120,11 @@ export namespace RvcModelListResponse {
 
       isPreStemmed: boolean;
 
-      isYoutube: boolean;
-
-      length: number;
-
-      name: string;
-
       url: string;
-
-      youtubeUrl?: string | null;
     }
 
     export interface RvcModel {
       id: string;
-
-      isDeleted: boolean;
-
-      isModRemoved: boolean;
-
-      isPublic: boolean;
-
-      simplifiedTitle: string;
 
       title: string;
     }
