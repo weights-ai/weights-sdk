@@ -44,8 +44,6 @@ export interface TrainingCreateResponse {
 
   isPremiumJob: boolean;
 
-  isPublic: boolean;
-
   name: string;
 
   runDeEchoDeReverb: boolean;
@@ -101,10 +99,6 @@ export namespace TrainingCreateResponse {
 
     isDeleted: boolean;
 
-    isModRemoved: boolean;
-
-    isPublic: boolean;
-
     simplifiedTitle: string;
 
     title: string;
@@ -121,8 +115,6 @@ export interface TrainingRetrieveResponse {
   createdAt: string;
 
   isPremiumJob: boolean;
-
-  isPublic: boolean;
 
   name: string;
 
@@ -179,10 +171,6 @@ export namespace TrainingRetrieveResponse {
 
     isDeleted: boolean;
 
-    isModRemoved: boolean;
-
-    isPublic: boolean;
-
     simplifiedTitle: string;
 
     title: string;
@@ -207,8 +195,6 @@ export interface TrainingCreateParams {
   name: string;
 
   description?: string;
-
-  isPublic?: boolean;
 
   runDeEchoDeReverb?: boolean;
 

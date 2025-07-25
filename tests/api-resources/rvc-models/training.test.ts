@@ -29,7 +29,6 @@ describe('resource training', () => {
       audioFiles: [{ length: 1, name: 'x', url: 'https://example.com' }],
       name: 'x',
       description: 'description',
-      isPublic: true,
       runDeEchoDeReverb: true,
       runKaraoke: true,
     });
