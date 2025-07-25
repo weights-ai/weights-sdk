@@ -42,10 +42,6 @@ export interface TrainingCreateResponse {
 
   createdAt: string;
 
-  isPremiumJob: boolean;
-
-  isPublic: boolean;
-
   name: string;
 
   runDeEchoDeReverb: boolean;
@@ -53,8 +49,6 @@ export interface TrainingCreateResponse {
   runKaraoke: boolean;
 
   updatedAt: string;
-
-  version: number;
 
   description?: string | null;
 
@@ -85,27 +79,11 @@ export namespace TrainingCreateResponse {
 
     isPreStemmed: boolean;
 
-    isYoutube: boolean;
-
-    length: number;
-
-    name: string;
-
     url: string;
-
-    youtubeUrl?: string | null;
   }
 
   export interface RvcModel {
     id: string;
-
-    isDeleted: boolean;
-
-    isModRemoved: boolean;
-
-    isPublic: boolean;
-
-    simplifiedTitle: string;
 
     title: string;
   }
@@ -120,10 +98,6 @@ export interface TrainingRetrieveResponse {
 
   createdAt: string;
 
-  isPremiumJob: boolean;
-
-  isPublic: boolean;
-
   name: string;
 
   runDeEchoDeReverb: boolean;
@@ -131,8 +105,6 @@ export interface TrainingRetrieveResponse {
   runKaraoke: boolean;
 
   updatedAt: string;
-
-  version: number;
 
   description?: string | null;
 
@@ -163,27 +135,11 @@ export namespace TrainingRetrieveResponse {
 
     isPreStemmed: boolean;
 
-    isYoutube: boolean;
-
-    length: number;
-
-    name: string;
-
     url: string;
-
-    youtubeUrl?: string | null;
   }
 
   export interface RvcModel {
     id: string;
-
-    isDeleted: boolean;
-
-    isModRemoved: boolean;
-
-    isPublic: boolean;
-
-    simplifiedTitle: string;
 
     title: string;
   }
@@ -208,8 +164,6 @@ export interface TrainingCreateParams {
 
   description?: string;
 
-  isPublic?: boolean;
-
   runDeEchoDeReverb?: boolean;
 
   runKaraoke?: boolean;
@@ -217,11 +171,9 @@ export interface TrainingCreateParams {
 
 export namespace TrainingCreateParams {
   export interface AudioFile {
-    length: number;
-
-    name: string;
-
     url: string;
+
+    isPreStemmed?: boolean;
   }
 }
 
