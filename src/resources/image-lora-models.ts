@@ -90,6 +90,10 @@ export interface ImageLoraModelRetrieveResponse {
 
   isNSFW: boolean;
 
+  isPublic: boolean;
+
+  isUnlisted: boolean;
+
   name: string;
 
   triggers: Array<string>;
@@ -132,6 +136,10 @@ export namespace ImageLoraModelListResponse {
     isDeleted: boolean;
 
     isNSFW: boolean;
+
+    isPublic: boolean;
+
+    isUnlisted: boolean;
 
     name: string;
 
@@ -193,6 +201,10 @@ export namespace ImageLoraModelSearchResponse {
 
     isNSFW: boolean;
 
+    isPublic: boolean;
+
+    isUnlisted: boolean;
+
     name: string;
 
     triggers: Array<string>;
@@ -227,6 +239,8 @@ export interface ImageLoraModelCreateParams {
   images: Array<ImageLoraModelCreateParams.Image>;
 
   name: string;
+
+  isPublic?: boolean;
 
   triggerWord?: string;
 

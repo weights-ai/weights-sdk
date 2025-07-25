@@ -40,6 +40,7 @@ describe('resource imageLoraModels', () => {
         { url: 'https://example.com', description: 'description' },
       ],
       name: 'x',
+      isPublic: true,
       triggerWord: 'triggerWord',
       validationPrompt: 'validationPrompt',
     });
