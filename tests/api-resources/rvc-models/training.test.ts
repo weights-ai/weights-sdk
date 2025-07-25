@@ -11,7 +11,7 @@ describe('resource training', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
     const responsePromise = client.rvcModels.training.create({
-      audioFiles: [{ length: 1, name: 'x', url: 'https://example.com' }],
+      audioFiles: [{ url: 'https://example.com' }],
       name: 'x',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -26,10 +26,9 @@ describe('resource training', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
     const response = await client.rvcModels.training.create({
-      audioFiles: [{ length: 1, name: 'x', url: 'https://example.com' }],
+      audioFiles: [{ url: 'https://example.com', isPreStemmed: true }],
       name: 'x',
       description: 'description',
-      isPublic: true,
       runDeEchoDeReverb: true,
       runKaraoke: true,
     });
