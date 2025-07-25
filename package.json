@@ -1,6 +1,6 @@
 {
   "name": "@weights-ai/sdk",
-  "version": "0.1.0-alpha.7",
+  "version": "0.1.0-alpha.8",
   "description": "The official TypeScript library for the Weights API",
   "author": "Weights <support@weights.com>",
   "types": "dist/index.d.ts",
