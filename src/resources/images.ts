@@ -78,6 +78,11 @@ export interface ImageCreateResponse {
   numImages: number;
 
   /**
+   * Array of URLs to the generated images
+   */
+  outputUrls: Array<string>;
+
+  /**
    * Text prompt used for the visual creation
    */
   prompt: string;
@@ -101,11 +106,6 @@ export interface ImageCreateResponse {
    * Timestamp when the job was last updated
    */
   updatedAt: string;
-
-  /**
-   * Array of URLs to the generated images
-   */
-  outputUrls?: Array<string>;
 }
 
 export namespace ImageCreateResponse {
@@ -167,6 +167,11 @@ export interface ImageRetrieveResponse {
   numImages: number;
 
   /**
+   * Array of URLs to the generated images
+   */
+  outputUrls: Array<string>;
+
+  /**
    * Text prompt used for the visual creation
    */
   prompt: string;
@@ -190,11 +195,6 @@ export interface ImageRetrieveResponse {
    * Timestamp when the job was last updated
    */
   updatedAt: string;
-
-  /**
-   * Array of URLs to the generated images
-   */
-  outputUrls?: Array<string>;
 }
 
 export namespace ImageRetrieveResponse {
