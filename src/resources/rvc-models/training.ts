@@ -10,18 +10,6 @@ export class Training extends APIResource {
    * Creates a new RVC model training job using the provided audio files. The audio
    * files should already be uploaded to a web-accessible location. The training job
    * will be queued for processing.
-   *
-   * @example
-   * ```ts
-   * const training = await client.rvcModels.training.create({
-   *   audioFiles: [
-   *     {
-   *       url: 'https://storage.example.com/training/voice_sample1.wav',
-   *     },
-   *   ],
-   *   name: 'John Doe Voice Model',
-   * });
-   * ```
    */
   create(body: TrainingCreateParams, options?: RequestOptions): APIPromise<TrainingCreateResponse> {
     return this._client.post('/rvc-models/training/create', { body, ...options });
@@ -30,13 +18,6 @@ export class Training extends APIResource {
   /**
    * Retrieves the details of a specific RVC model training job by its ID. Returns
    * null if the job is not found or doesn't belong to the authenticated user.
-   *
-   * @example
-   * ```ts
-   * const training = await client.rvcModels.training.retrieve(
-   *   'id',
-   * );
-   * ```
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<TrainingRetrieveResponse | null> {
     return this._client.get(path`/rvc-models/training/${id}`, options);
@@ -46,13 +27,6 @@ export class Training extends APIResource {
    * Retrieves the current training status of a specific RVC model training job.
    * Useful for polling the status of a training job. Returns null if the job is not
    * found or doesn't belong to the authenticated user.
-   *
-   * @example
-   * ```ts
-   * const response = await client.rvcModels.training.status(
-   *   'id',
-   * );
-   * ```
    */
   status(id: string, options?: RequestOptions): APIPromise<TrainingStatusResponse | null> {
     return this._client.get(path`/rvc-models/training/${id}/status`, options);

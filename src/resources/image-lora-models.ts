@@ -10,20 +10,6 @@ export class ImageLoraModels extends APIResource {
    * Creates a new image LoRA model training job. Requires 5-30 images with their
    * URLs. The images should already be uploaded to a web-accessible location. The
    * training job will be queued for processing.
-   *
-   * @example
-   * ```ts
-   * const imageLoraModel = await client.imageLoraModels.create({
-   *   images: [
-   *     { url: 'https://example.com/image1.jpg' },
-   *     { url: 'https://example.com/image1.jpg' },
-   *     { url: 'https://example.com/image1.jpg' },
-   *     { url: 'https://example.com/image1.jpg' },
-   *     { url: 'https://example.com/image1.jpg' },
-   *   ],
-   *   name: 'My Custom Style',
-   * });
-   * ```
    */
   create(
     body: ImageLoraModelCreateParams,
@@ -36,12 +22,6 @@ export class ImageLoraModels extends APIResource {
    * Retrieves the details of a specific image LoRA model by its ID. Returns null if
    * the model is not found or doesn't belong to the authenticated user (unless it's
    * public).
-   *
-   * @example
-   * ```ts
-   * const imageLoraModel =
-   *   await client.imageLoraModels.retrieve('id');
-   * ```
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<ImageLoraModelRetrieveResponse | null> {
     return this._client.get(path`/image-lora-models/${id}`, options);
@@ -51,11 +31,6 @@ export class ImageLoraModels extends APIResource {
    * Retrieves a paginated list of image LoRA models created by the authenticated
    * user, sorted by creation date in descending order. Optionally filter results by
    * name search.
-   *
-   * @example
-   * ```ts
-   * const imageLoraModels = await client.imageLoraModels.list();
-   * ```
    */
   list(
     query: ImageLoraModelListParams | null | undefined = {},
@@ -68,12 +43,6 @@ export class ImageLoraModels extends APIResource {
    * Retrieves a signed download URL for a trained Image LoRA model. The model must
    * belong to the authenticated user and must have been trained via the API. The URL
    * expires in 5 minutes.
-   *
-   * @example
-   * ```ts
-   * const response =
-   *   await client.imageLoraModels.retrieveDownloadURL('id');
-   * ```
    */
   retrieveDownloadURL(
     id: string,
@@ -86,12 +55,6 @@ export class ImageLoraModels extends APIResource {
    * Retrieves the current training status of a specific image LoRA model. Useful for
    * polling the status of a training job. Returns null if the model is not found or
    * doesn't belong to the authenticated user.
-   *
-   * @example
-   * ```ts
-   * const response =
-   *   await client.imageLoraModels.retrieveStatus('id');
-   * ```
    */
   retrieveStatus(
     id: string,
@@ -103,13 +66,6 @@ export class ImageLoraModels extends APIResource {
   /**
    * Searches through all public image LoRA models in the database. Results are
    * sorted by creation date. This endpoint does not require authentication.
-   *
-   * @example
-   * ```ts
-   * const response = await client.imageLoraModels.search({
-   *   search: 'x',
-   * });
-   * ```
    */
   search(
     query: ImageLoraModelSearchParams,
