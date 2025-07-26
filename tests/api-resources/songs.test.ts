@@ -10,7 +10,10 @@ const client = new Weights({
 describe('resource songs', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.songs.create({ lyrics: 'In the moonlight, we dance through the night' });
+    const responsePromise = client.songs.create({
+      lyrics: 'In the moonlight, we dance through the night',
+      prompt: 'blues, melancholic, raw, lonely bar, heartbreak',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -24,7 +27,7 @@ describe('resource songs', () => {
   test.skip('create: required and optional params', async () => {
     const response = await client.songs.create({
       lyrics: 'In the moonlight, we dance through the night',
-      section: 'all',
+      prompt: 'blues, melancholic, raw, lonely bar, heartbreak',
     });
   });
 
