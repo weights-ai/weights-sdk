@@ -10,7 +10,7 @@ const client = new Weights({
 describe('resource songs', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.songs.create({ lyrics: 'lyrics' });
+    const responsePromise = client.songs.create({ lyrics: 'In the moonlight, we dance through the night' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,7 +22,10 @@ describe('resource songs', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
-    const response = await client.songs.create({ lyrics: 'lyrics', section: 'verse' });
+    const response = await client.songs.create({
+      lyrics: 'In the moonlight, we dance through the night',
+      section: 'all',
+    });
   });
 
   // skipped: tests are disabled for the time being
@@ -54,7 +57,7 @@ describe('resource songs', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.songs.list(
-        { cursor: 'cursor', limit: 1, search: 'search' },
+        { cursor: 'cmcz89fci00zr0dlt68klunpf', limit: 25, search: 'search' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Weights.NotFoundError);
