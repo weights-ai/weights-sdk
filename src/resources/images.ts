@@ -9,14 +9,6 @@ export class Images extends APIResource {
   /**
    * Creates a new image generation job using the provided prompt. The job will be
    * queued for processing.
-   *
-   * @example
-   * ```ts
-   * const image = await client.images.create({
-   *   prompt:
-   *     'A beautiful sunset over mountains with a lake in the foreground',
-   * });
-   * ```
    */
   create(body: ImageCreateParams, options?: RequestOptions): APIPromise<ImageCreateResponse> {
     return this._client.post('/images/create', { body, ...options });
@@ -24,11 +16,6 @@ export class Images extends APIResource {
 
   /**
    * Retrieves the status and results of a specific visual creation job by its ID.
-   *
-   * @example
-   * ```ts
-   * const image = await client.images.retrieve('id');
-   * ```
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<ImageRetrieveResponse> {
     return this._client.get(path`/images/${id}`, options);
@@ -37,11 +24,6 @@ export class Images extends APIResource {
   /**
    * Retrieves a paginated list of visual creation jobs for the authenticated user,
    * sorted by creation date in descending order.
-   *
-   * @example
-   * ```ts
-   * const images = await client.images.list();
-   * ```
    */
   list(
     query: ImageListParams | null | undefined = {},

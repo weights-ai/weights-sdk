@@ -8,15 +8,6 @@ export class Videos extends APIResource {
   /**
    * Creates a new video generation job using the provided prompt. The job will be
    * queued for processing.
-   *
-   * @example
-   * ```ts
-   * const video = await client.videos.create({
-   *   inputImageUrl:
-   *     'https://storage.example.com/input/river.jpg',
-   *   prompt: 'A flowing river with leaves floating downstream',
-   * });
-   * ```
    */
   create(body: VideoCreateParams, options?: RequestOptions): APIPromise<VideoCreateResponse> {
     return this._client.post('/videos/create', { body, ...options });
