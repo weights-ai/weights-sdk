@@ -27,7 +27,7 @@ describe('resource images', () => {
     const response = await client.images.create({
       prompt: 'A beautiful sunset over mountains with a lake in the foreground',
       dimensions: 'SQUARE',
-      loraIds: ['string'],
+      loraIds: ['cmcz8do7y00fw0dnd3t7906sy'],
       numImages: 1,
     });
   });

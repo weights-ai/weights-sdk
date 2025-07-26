@@ -9,14 +9,6 @@ export class Covers extends APIResource {
   /**
    * Creates a new AI cover job for the authenticated user using the specified RVC
    * model and audio file. The job is added to the queue for further processing.
-   *
-   * @example
-   * ```ts
-   * const cover = await client.covers.create({
-   *   inputUrl: 'https://storage.example.com/input/song.wav',
-   *   rvcModelId: 'model_123456789',
-   * });
-   * ```
    */
   create(body: CoverCreateParams, options?: RequestOptions): APIPromise<CoverCreateResponse> {
     return this._client.post('/covers/create', { body, ...options });
@@ -25,11 +17,6 @@ export class Covers extends APIResource {
   /**
    * Retrieves the details of a specific AI cover job by its ID. Returns null if the
    * cover is not found or doesn't belong to the authenticated user.
-   *
-   * @example
-   * ```ts
-   * const cover = await client.covers.retrieve('id');
-   * ```
    */
   retrieve(id: string, options?: RequestOptions): APIPromise<CoverRetrieveResponse | null> {
     return this._client.get(path`/covers/${id}`, options);
@@ -38,11 +25,6 @@ export class Covers extends APIResource {
   /**
    * Retrieves a paginated list of AI cover jobs belonging to the currently
    * authenticated user.
-   *
-   * @example
-   * ```ts
-   * const covers = await client.covers.list();
-   * ```
    */
   list(
     query: CoverListParams | null | undefined = {},
