@@ -12,13 +12,13 @@ describe('resource imageLoraModels', () => {
   test.skip('create: only required params', async () => {
     const responsePromise = client.imageLoraModels.create({
       images: [
-        { url: 'https://example.com' },
-        { url: 'https://example.com' },
-        { url: 'https://example.com' },
-        { url: 'https://example.com' },
-        { url: 'https://example.com' },
+        { url: 'https://example.com/image1.jpg' },
+        { url: 'https://example.com/image1.jpg' },
+        { url: 'https://example.com/image1.jpg' },
+        { url: 'https://example.com/image1.jpg' },
+        { url: 'https://example.com/image1.jpg' },
       ],
-      name: 'x',
+      name: 'My Custom Style',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -33,14 +33,14 @@ describe('resource imageLoraModels', () => {
   test.skip('create: required and optional params', async () => {
     const response = await client.imageLoraModels.create({
       images: [
-        { url: 'https://example.com', description: 'description' },
-        { url: 'https://example.com', description: 'description' },
-        { url: 'https://example.com', description: 'description' },
-        { url: 'https://example.com', description: 'description' },
-        { url: 'https://example.com', description: 'description' },
+        { url: 'https://example.com/image1.jpg', description: 'Portrait with specific lighting' },
+        { url: 'https://example.com/image1.jpg', description: 'Portrait with specific lighting' },
+        { url: 'https://example.com/image1.jpg', description: 'Portrait with specific lighting' },
+        { url: 'https://example.com/image1.jpg', description: 'Portrait with specific lighting' },
+        { url: 'https://example.com/image1.jpg', description: 'Portrait with specific lighting' },
       ],
-      name: 'x',
-      triggerWord: 'triggerWord',
+      name: 'My Custom Style',
+      triggerWord: 'my_style',
     });
   });
 
@@ -73,7 +73,7 @@ describe('resource imageLoraModels', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.imageLoraModels.list(
-        { cursor: 'cursor', limit: 1, search: 'search' },
+        { cursor: 'cmcz89fci00zr0dlt68klunpf', limit: 25, search: 'search' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Weights.NotFoundError);
@@ -117,6 +117,10 @@ describe('resource imageLoraModels', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('search: required and optional params', async () => {
-    const response = await client.imageLoraModels.search({ search: 'x', cursor: 'cursor', limit: 1 });
+    const response = await client.imageLoraModels.search({
+      search: 'x',
+      cursor: 'cmcz89fci00zr0dlt68klunpf',
+      limit: 25,
+    });
   });
 });
