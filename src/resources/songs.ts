@@ -15,6 +15,7 @@ export class Songs extends APIResource {
    * ```ts
    * const song = await client.songs.create({
    *   lyrics: 'In the moonlight, we dance through the night',
+   *   prompt: 'blues, melancholic, raw, lonely bar, heartbreak',
    * });
    * ```
    */
@@ -104,6 +105,11 @@ export interface SongRetrieveResponse {
   updatedAt: string;
 
   /**
+   * The prompt used to generate the song
+   */
+  prompt?: string;
+
+  /**
    * Current position in the processing queue
    */
   queuePosition?: number | null;
@@ -161,6 +167,11 @@ export namespace SongListResponse {
     updatedAt: string;
 
     /**
+     * The prompt used to generate the song
+     */
+    prompt?: string;
+
+    /**
      * Current position in the processing queue
      */
     queuePosition?: number | null;
@@ -174,9 +185,9 @@ export interface SongCreateParams {
   lyrics: string;
 
   /**
-   * The section of the song to generate
+   * The prompt for the style of the song
    */
-  section?: 'verse' | 'chorus' | 'guitar-stabs' | 'all' | 'all_v2';
+  prompt: string;
 }
 
 export interface SongListParams {
