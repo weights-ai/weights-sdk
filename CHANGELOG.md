@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-07-26)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Features
+
+* **api:** api update ([9742877](https://github.com/weights-ai/weights-sdk/commit/9742877970d24c27a2a094c987dee0df0b3b616e))
+
 ## 0.1.0-alpha.11 (2025-07-26)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
