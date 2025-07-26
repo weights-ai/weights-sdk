@@ -25,7 +25,7 @@ describe('resource rvcModels', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.rvcModels.list(
-        { cursor: 'cursor', limit: 1, search: 'search' },
+        { cursor: 'cmcz89fci00zr0dlt68klunpf', limit: 25, search: 'search' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Weights.NotFoundError);
@@ -69,15 +69,19 @@ describe('resource rvcModels', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('search: required and optional params', async () => {
-    const response = await client.rvcModels.search({ search: 'x', cursor: 'cursor', limit: 1 });
+    const response = await client.rvcModels.search({
+      search: 'x',
+      cursor: 'cmcz89fci00zr0dlt68klunpf',
+      limit: 25,
+    });
   });
 
   // skipped: tests are disabled for the time being
   test.skip('upload: only required params', async () => {
     const responsePromise = client.rvcModels.upload({
-      description: 'description',
-      title: 'title',
-      url: 'url',
+      description: "A voice model trained on John Doe's voice recordings",
+      title: 'John Doe Voice Model',
+      url: 'https://storage.example.com/models/voice_model.pth',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -91,9 +95,9 @@ describe('resource rvcModels', () => {
   // skipped: tests are disabled for the time being
   test.skip('upload: required and optional params', async () => {
     const response = await client.rvcModels.upload({
-      description: 'description',
-      title: 'title',
-      url: 'url',
+      description: "A voice model trained on John Doe's voice recordings",
+      title: 'John Doe Voice Model',
+      url: 'https://storage.example.com/models/voice_model.pth',
     });
   });
 });

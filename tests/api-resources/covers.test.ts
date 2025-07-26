@@ -10,7 +10,10 @@ const client = new Weights({
 describe('resource covers', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.covers.create({ inputUrl: 'inputUrl', rvcModelId: 'rvcModelId' });
+    const responsePromise = client.covers.create({
+      inputUrl: 'https://storage.example.com/input/song.wav',
+      rvcModelId: 'model_123456789',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,17 +26,17 @@ describe('resource covers', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
     const response = await client.covers.create({
-      inputUrl: 'inputUrl',
-      rvcModelId: 'rvcModelId',
-      consonantProtection: 0,
-      deEcho: true,
-      inputFileName: 'inputFileName',
+      inputUrl: 'https://storage.example.com/input/song.wav',
+      rvcModelId: 'model_123456789',
+      consonantProtection: 0.5,
+      deEcho: false,
+      inputFileName: 'my_song.wav',
       instrumentalPitch: 0,
-      isolateMainVocals: true,
+      isolateMainVocals: false,
       pitch: 0,
-      preStemmed: true,
-      stemOnly: true,
-      volumeEnvelope: 0,
+      preStemmed: false,
+      stemOnly: false,
+      volumeEnvelope: 1,
     });
   });
 
@@ -65,7 +68,10 @@ describe('resource covers', () => {
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.covers.list({ cursor: 'cursor', limit: 1 }, { path: '/_stainless_unknown_path' }),
+      client.covers.list(
+        { cursor: 'cmcz89fci00zr0dlt68klunpf', limit: 25 },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Weights.NotFoundError);
   });
 });

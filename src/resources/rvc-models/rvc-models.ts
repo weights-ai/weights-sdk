@@ -20,6 +20,11 @@ export class RvcModels extends APIResource {
    * Retrieves all RVC models (both uploaded and training jobs) for the authenticated
    * user, returned in descending order by creation date. Pagination is supported
    * through a cursor-based approach. Optionally filter results by name search.
+   *
+   * @example
+   * ```ts
+   * const rvcModels = await client.rvcModels.list();
+   * ```
    */
   list(
     query: RvcModelListParams | null | undefined = {},
@@ -32,6 +37,13 @@ export class RvcModels extends APIResource {
    * Retrieves a signed download URL for a trained RVC model. The model must belong
    * to the authenticated user and must have been trained via the API. The URL
    * expires in 5 minutes.
+   *
+   * @example
+   * ```ts
+   * const response = await client.rvcModels.retrieveDownloadURL(
+   *   'id',
+   * );
+   * ```
    */
   retrieveDownloadURL(id: string, options?: RequestOptions): APIPromise<RvcModelRetrieveDownloadURLResponse> {
     return this._client.get(path`/rvc-models/${id}/download`, options);
@@ -40,6 +52,13 @@ export class RvcModels extends APIResource {
   /**
    * Retrieves the details of a specific uploaded RVC model by its ID. Returns null
    * if the model is not found or doesn't belong to the authenticated user.
+   *
+   * @example
+   * ```ts
+   * const response = await client.rvcModels.retrieveUploaded(
+   *   'id',
+   * );
+   * ```
    */
   retrieveUploaded(
     id: string,
@@ -51,6 +70,13 @@ export class RvcModels extends APIResource {
   /**
    * Searches through all public RVC models in the database. Results are sorted by
    * creation date. This endpoint does not require authentication.
+   *
+   * @example
+   * ```ts
+   * const response = await client.rvcModels.search({
+   *   search: 'x',
+   * });
+   * ```
    */
   search(query: RvcModelSearchParams, options?: RequestOptions): APIPromise<RvcModelSearchResponse> {
     return this._client.get('/rvc-models/search', { query, ...options });
@@ -59,6 +85,16 @@ export class RvcModels extends APIResource {
   /**
    * Uploads an existing RVC model to be used with Weights from the specified URL and
    * creates a new model entry in the database. The user must be authenticated.
+   *
+   * @example
+   * ```ts
+   * const response = await client.rvcModels.upload({
+   *   description:
+   *     "A voice model trained on John Doe's voice recordings",
+   *   title: 'John Doe Voice Model',
+   *   url: 'https://storage.example.com/models/voice_model.pth',
+   * });
+   * ```
    */
   upload(body: RvcModelUploadParams, options?: RequestOptions): APIPromise<RvcModelUploadResponse> {
     return this._client.post('/rvc-models/upload', { body, ...options });
@@ -136,10 +172,19 @@ export interface RvcModelRetrieveDownloadURLResponse {
 }
 
 export interface RvcModelRetrieveUploadedResponse {
+  /**
+   * Unique identifier for the RVC model
+   */
   id: string;
 
+  /**
+   * Timestamp when the model was created
+   */
   createdAt: string;
 
+  /**
+   * Name of the RVC voice model
+   */
   title: string;
 }
 
@@ -149,25 +194,50 @@ export interface RvcModelSearchResponse {
 
 export namespace RvcModelSearchResponse {
   export interface Model {
+    /**
+     * Unique identifier for the RVC model
+     */
     id: string;
 
+    /**
+     * Timestamp when the model was created
+     */
     createdAt: string;
 
+    /**
+     * Name of the RVC voice model
+     */
     title: string;
   }
 }
 
 export interface RvcModelUploadResponse {
+  /**
+   * Unique identifier for the RVC model
+   */
   id: string;
 
+  /**
+   * Timestamp when the model was created
+   */
   createdAt: string;
 
+  /**
+   * Name of the RVC voice model
+   */
   title: string;
 }
 
 export interface RvcModelListParams {
+  /**
+   * Cursor for pagination to get the next page of results - this is the last item's
+   * ID from the previous page
+   */
   cursor?: string | null;
 
+  /**
+   * Number of items to return per page
+   */
   limit?: number;
 
   search?: string;
@@ -176,16 +246,32 @@ export interface RvcModelListParams {
 export interface RvcModelSearchParams {
   search: string;
 
+  /**
+   * Cursor for pagination to get the next page of results - this is the last item's
+   * ID from the previous page
+   */
   cursor?: string | null;
 
+  /**
+   * Number of items to return per page
+   */
   limit?: number;
 }
 
 export interface RvcModelUploadParams {
+  /**
+   * Description of the voice model
+   */
   description: string;
 
+  /**
+   * Name for the voice model
+   */
   title: string;
 
+  /**
+   * URL to the RVC model file
+   */
   url: string;
 }
 
