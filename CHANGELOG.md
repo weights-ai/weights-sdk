@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-07-30)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Chores
+
+* **internal:** remove redundant imports config ([d7e7a14](https://github.com/weights-ai/weights-sdk/commit/d7e7a146b5b1cbb6c5c11668a00b2f1cfbb6c8be))
+
 ## 0.1.0-alpha.12 (2025-07-26)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
