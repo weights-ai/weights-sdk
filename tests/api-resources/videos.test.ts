@@ -8,7 +8,7 @@ const client = new Weights({
 });
 
 describe('resource videos', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.videos.create({
       inputImageUrl: 'https://storage.example.com/input/river.jpg',
@@ -23,7 +23,7 @@ describe('resource videos', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.videos.create({
       inputImageUrl: 'https://storage.example.com/input/river.jpg',

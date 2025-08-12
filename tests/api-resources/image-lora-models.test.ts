@@ -8,7 +8,7 @@ const client = new Weights({
 });
 
 describe('resource imageLoraModels', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.imageLoraModels.create({
       images: [
@@ -29,7 +29,7 @@ describe('resource imageLoraModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.imageLoraModels.create({
       images: [
@@ -44,7 +44,7 @@ describe('resource imageLoraModels', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.imageLoraModels.retrieve('id');
     const rawResponse = await responsePromise.asResponse();
@@ -56,7 +56,7 @@ describe('resource imageLoraModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.imageLoraModels.list();
     const rawResponse = await responsePromise.asResponse();
@@ -68,7 +68,7 @@ describe('resource imageLoraModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -79,7 +79,7 @@ describe('resource imageLoraModels', () => {
     ).rejects.toThrow(Weights.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveDownloadURL', async () => {
     const responsePromise = client.imageLoraModels.retrieveDownloadURL('id');
     const rawResponse = await responsePromise.asResponse();
@@ -91,7 +91,7 @@ describe('resource imageLoraModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveStatus', async () => {
     const responsePromise = client.imageLoraModels.retrieveStatus('id');
     const rawResponse = await responsePromise.asResponse();
@@ -103,7 +103,7 @@ describe('resource imageLoraModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('search: only required params', async () => {
     const responsePromise = client.imageLoraModels.search({ search: 'x' });
     const rawResponse = await responsePromise.asResponse();
@@ -115,7 +115,7 @@ describe('resource imageLoraModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('search: required and optional params', async () => {
     const response = await client.imageLoraModels.search({
       search: 'x',

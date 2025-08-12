@@ -8,7 +8,7 @@ const client = new Weights({
 });
 
 describe('resource rvcModels', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.rvcModels.list();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource rvcModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -31,7 +31,7 @@ describe('resource rvcModels', () => {
     ).rejects.toThrow(Weights.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveDownloadURL', async () => {
     const responsePromise = client.rvcModels.retrieveDownloadURL('id');
     const rawResponse = await responsePromise.asResponse();
@@ -43,7 +43,7 @@ describe('resource rvcModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveUploaded', async () => {
     const responsePromise = client.rvcModels.retrieveUploaded('id');
     const rawResponse = await responsePromise.asResponse();
@@ -55,7 +55,7 @@ describe('resource rvcModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('search: only required params', async () => {
     const responsePromise = client.rvcModels.search({ search: 'x' });
     const rawResponse = await responsePromise.asResponse();
@@ -67,7 +67,7 @@ describe('resource rvcModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('search: required and optional params', async () => {
     const response = await client.rvcModels.search({
       search: 'x',
@@ -76,7 +76,7 @@ describe('resource rvcModels', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('upload: only required params', async () => {
     const responsePromise = client.rvcModels.upload({
       description: "A voice model trained on John Doe's voice recordings",
@@ -92,7 +92,7 @@ describe('resource rvcModels', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('upload: required and optional params', async () => {
     const response = await client.rvcModels.upload({
       description: "A voice model trained on John Doe's voice recordings",
