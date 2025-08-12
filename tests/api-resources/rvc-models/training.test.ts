@@ -8,7 +8,7 @@ const client = new Weights({
 });
 
 describe('resource training', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.rvcModels.training.create({
       audioFiles: [{ url: 'https://storage.example.com/training/voice_sample1.wav' }],
@@ -23,7 +23,7 @@ describe('resource training', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.rvcModels.training.create({
       audioFiles: [{ url: 'https://storage.example.com/training/voice_sample1.wav', isPreStemmed: false }],
@@ -34,7 +34,7 @@ describe('resource training', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.rvcModels.training.retrieve('id');
     const rawResponse = await responsePromise.asResponse();
@@ -46,7 +46,7 @@ describe('resource training', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('status', async () => {
     const responsePromise = client.rvcModels.training.status('id');
     const rawResponse = await responsePromise.asResponse();

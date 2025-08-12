@@ -8,7 +8,7 @@ const client = new Weights({
 });
 
 describe('resource user', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.user.retrieve();
     const rawResponse = await responsePromise.asResponse();
