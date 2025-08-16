@@ -764,6 +764,7 @@ export class Weights {
   songs: API.Songs = new API.Songs(this);
   user: API.User = new API.User(this);
 }
+
 Weights.Images = Images;
 Weights.Videos = Videos;
 Weights.ImageLoraModels = ImageLoraModels;
@@ -771,6 +772,7 @@ Weights.Covers = Covers;
 Weights.RvcModels = RvcModels;
 Weights.Songs = Songs;
 Weights.User = User;
+
 export declare namespace Weights {
   export type RequestOptions = Opts.RequestOptions;
 
