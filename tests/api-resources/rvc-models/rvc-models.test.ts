@@ -56,6 +56,27 @@ describe('resource rvcModels', () => {
   });
 
   // Prism tests are disabled
+  test.skip('search: only required params', async () => {
+    const responsePromise = client.rvcModels.search({ search: 'x' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('search: required and optional params', async () => {
+    const response = await client.rvcModels.search({
+      search: 'x',
+      cursor: 'cmcz89fci00zr0dlt68klunpf',
+      limit: 25,
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('upload: only required params', async () => {
     const responsePromise = client.rvcModels.upload({
       description: "A voice model trained on John Doe's voice recordings",
