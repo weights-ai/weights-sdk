@@ -61,6 +61,7 @@ Types:
 - <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelListResponse</a></code>
 - <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelRetrieveDownloadURLResponse</a></code>
 - <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelRetrieveUploadedResponse</a></code>
+- <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelSearchResponse</a></code>
 - <code><a href="./src/resources/rvc-models/rvc-models.ts">RvcModelUploadResponse</a></code>
 
 Methods:
@@ -68,6 +69,7 @@ Methods:
 - <code title="get /rvc-models">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">list</a>({ ...params }) -> RvcModelListResponse</code>
 - <code title="get /rvc-models/{id}/download">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">retrieveDownloadURL</a>(id) -> RvcModelRetrieveDownloadURLResponse</code>
 - <code title="get /rvc-models/uploaded/{id}">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">retrieveUploaded</a>(id) -> RvcModelRetrieveUploadedResponse | null</code>
+- <code title="get /rvc-models/search">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">search</a>({ ...params }) -> RvcModelSearchResponse</code>
 - <code title="post /rvc-models/upload">client.rvcModels.<a href="./src/resources/rvc-models/rvc-models.ts">upload</a>({ ...params }) -> RvcModelUploadResponse</code>
 
 ## Training

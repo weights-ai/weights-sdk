@@ -5,8 +5,10 @@ export {
   type RvcModelListResponse,
   type RvcModelRetrieveDownloadURLResponse,
   type RvcModelRetrieveUploadedResponse,
+  type RvcModelSearchResponse,
   type RvcModelUploadResponse,
   type RvcModelListParams,
+  type RvcModelSearchParams,
   type RvcModelUploadParams,
 } from './rvc-models';
 export {
