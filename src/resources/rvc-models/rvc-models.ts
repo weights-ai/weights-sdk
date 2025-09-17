@@ -117,14 +117,40 @@ export namespace RvcModelListResponse {
       createdAt: string;
 
       /**
+       * Sample audio URLs demonstrating the model
+       */
+      samples: Array<string>;
+
+      /**
        * Name of the RVC voice model
        */
       title: string;
 
       /**
+       * Description of the RVC voice model
+       */
+      content?: string | null;
+
+      /**
        * URL of the model preview image
        */
       image?: string | null;
+
+      /**
+       * Metrics related to the model's usage and performance
+       */
+      metrics?: RvcModel.Metrics | null;
+    }
+
+    export namespace RvcModel {
+      /**
+       * Metrics related to the model's usage and performance
+       */
+      export interface Metrics {
+        creations: number;
+
+        views: number;
+      }
     }
 
     export interface AudioFile {
@@ -155,14 +181,40 @@ export interface RvcModelRetrieveUploadedResponse {
   createdAt: string;
 
   /**
+   * Sample audio URLs demonstrating the model
+   */
+  samples: Array<string>;
+
+  /**
    * Name of the RVC voice model
    */
   title: string;
 
   /**
+   * Description of the RVC voice model
+   */
+  content?: string | null;
+
+  /**
    * URL of the model preview image
    */
   image?: string | null;
+
+  /**
+   * Metrics related to the model's usage and performance
+   */
+  metrics?: RvcModelRetrieveUploadedResponse.Metrics | null;
+}
+
+export namespace RvcModelRetrieveUploadedResponse {
+  /**
+   * Metrics related to the model's usage and performance
+   */
+  export interface Metrics {
+    creations: number;
+
+    views: number;
+  }
 }
 
 export interface RvcModelUploadResponse {
@@ -177,14 +229,40 @@ export interface RvcModelUploadResponse {
   createdAt: string;
 
   /**
+   * Sample audio URLs demonstrating the model
+   */
+  samples: Array<string>;
+
+  /**
    * Name of the RVC voice model
    */
   title: string;
 
   /**
+   * Description of the RVC voice model
+   */
+  content?: string | null;
+
+  /**
    * URL of the model preview image
    */
   image?: string | null;
+
+  /**
+   * Metrics related to the model's usage and performance
+   */
+  metrics?: RvcModelUploadResponse.Metrics | null;
+}
+
+export namespace RvcModelUploadResponse {
+  /**
+   * Metrics related to the model's usage and performance
+   */
+  export interface Metrics {
+    creations: number;
+
+    views: number;
+  }
 }
 
 export interface RvcModelListParams {
