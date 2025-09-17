@@ -62,17 +62,6 @@ export class ImageLoraModels extends APIResource {
   ): APIPromise<ImageLoraModelRetrieveStatusResponse | null> {
     return this._client.get(path`/image-lora-models/${id}/status`, options);
   }
-
-  /**
-   * Searches through all public image LoRA models in the database. Results are
-   * sorted by creation date. This endpoint does not require authentication.
-   */
-  search(
-    query: ImageLoraModelSearchParams,
-    options?: RequestOptions,
-  ): APIPromise<ImageLoraModelSearchResponse> {
-    return this._client.get('/image-lora-models/search', { query, ...options });
-  }
 }
 
 export interface ImageLoraModelCreateResponse {
@@ -281,101 +270,6 @@ export interface ImageLoraModelRetrieveStatusResponse {
   status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 }
 
-export interface ImageLoraModelSearchResponse {
-  models: Array<ImageLoraModelSearchResponse.Model>;
-}
-
-export namespace ImageLoraModelSearchResponse {
-  export interface Model {
-    /**
-     * Unique identifier for the LoRA model
-     */
-    id: string;
-
-    /**
-     * Timestamp when the LoRA model was created
-     */
-    createdAt: string;
-
-    /**
-     * Whether the model has been deleted
-     */
-    isDeleted: boolean;
-
-    /**
-     * Whether the model contains NSFW content
-     */
-    isNSFW: boolean;
-
-    /**
-     * Name of the LoRA model
-     */
-    name: string;
-
-    /**
-     * Array of trigger words for the LoRA model
-     */
-    triggers: Array<string>;
-
-    /**
-     * ID of the user who created the LoRA model
-     */
-    userId: string;
-
-    /**
-     * Blurred data URL for the preview image
-     */
-    blurDataUrl?: string | null;
-
-    /**
-     * Description of the LoRA model
-     */
-    description?: string | null;
-
-    /**
-     * URL to the preview image of the LoRA model
-     */
-    image?: string | null;
-
-    /**
-     * Information about the most recent training job
-     */
-    trainingJob?: Model.TrainingJob | null;
-  }
-
-  export namespace Model {
-    /**
-     * Information about the most recent training job
-     */
-    export interface TrainingJob {
-      /**
-       * Unique identifier for the training job
-       */
-      id: string;
-
-      /**
-       * Timestamp when the training job was created
-       */
-      createdAt: string;
-
-      /**
-       * Initial position in the training queue
-       */
-      initialQueuePosition: number | null;
-
-      /**
-       * Current status of the training job
-       */
-      status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
-
-      /**
-       * Brief description of the current training status
-       */
-      shortStatusText?: string | null;
-    }
-  }
-}
-
 export interface ImageLoraModelCreateParams {
   /**
    * Array of training images (5-30 images required)
@@ -422,21 +316,6 @@ export interface ImageLoraModelListParams {
   search?: string;
 }
 
-export interface ImageLoraModelSearchParams {
-  search: string;
-
-  /**
-   * Cursor for pagination to get the next page of results - this is the last item's
-   * ID from the previous page
-   */
-  cursor?: string | null;
-
-  /**
-   * Number of items to return per page
-   */
-  limit?: number;
-}
-
 export declare namespace ImageLoraModels {
   export {
     type ImageLoraModelCreateResponse as ImageLoraModelCreateResponse,
@@ -444,9 +323,7 @@ export declare namespace ImageLoraModels {
     type ImageLoraModelListResponse as ImageLoraModelListResponse,
     type ImageLoraModelRetrieveDownloadURLResponse as ImageLoraModelRetrieveDownloadURLResponse,
     type ImageLoraModelRetrieveStatusResponse as ImageLoraModelRetrieveStatusResponse,
-    type ImageLoraModelSearchResponse as ImageLoraModelSearchResponse,
     type ImageLoraModelCreateParams as ImageLoraModelCreateParams,
     type ImageLoraModelListParams as ImageLoraModelListParams,
-    type ImageLoraModelSearchParams as ImageLoraModelSearchParams,
   };
 }
