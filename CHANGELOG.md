@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-09-17)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Features
+
+* **api:** api update ([71b6640](https://github.com/weights-ai/weights-sdk/commit/71b6640678ae639d20edcb1e42c413dd67643355))
+* **mcp:** add code execution tool ([f42d456](https://github.com/weights-ai/weights-sdk/commit/f42d456cd86938f046f951de264285985bd75d04))
+
+
+### Chores
+
+* add package to package.json ([87c2074](https://github.com/weights-ai/weights-sdk/commit/87c20749afeda9c7581c82fe4ec59aadb69eb3b3))
+* ci build action ([b2c4497](https://github.com/weights-ai/weights-sdk/commit/b2c44979a2c72d6e01c8f9280aa52546996beef8))
+* **client:** qualify global Blob ([c576b13](https://github.com/weights-ai/weights-sdk/commit/c576b130d3b208ddab584650fa93c615f23c8dfa))
+* **deps:** update dependency @types/node to v20.17.58 ([14dd50a](https://github.com/weights-ai/weights-sdk/commit/14dd50a6b84da0307fcb723f77155b52ca47c3d9))
+* **internal:** codegen related update ([ebaf274](https://github.com/weights-ai/weights-sdk/commit/ebaf274e5c7573813ec9a9b02509a735609b322f))
+* **internal:** codegen related update ([c8ce003](https://github.com/weights-ai/weights-sdk/commit/c8ce003f22a486c54989c235d72adea1664ee1ac))
+* **internal:** formatting change ([5614d39](https://github.com/weights-ai/weights-sdk/commit/5614d39913cdb0721640cd8e8e46ce0a200f2047))
+* **internal:** move publish config ([9417fc3](https://github.com/weights-ai/weights-sdk/commit/9417fc3225da10df6c89624e0802cdcfc2a0bbdb))
+* **internal:** remove redundant imports config ([d7e7a14](https://github.com/weights-ai/weights-sdk/commit/d7e7a146b5b1cbb6c5c11668a00b2f1cfbb6c8be))
+* **internal:** update comment in script ([758af02](https://github.com/weights-ai/weights-sdk/commit/758af0287893239bb6eb0978f37b319e22aa3649))
+* **internal:** update global Error reference ([1f9997c](https://github.com/weights-ai/weights-sdk/commit/1f9997ca2220bc467197ecba7966e1bae873e996))
+* update @stainless-api/prism-cli to v5.15.0 ([c0bbf95](https://github.com/weights-ai/weights-sdk/commit/c0bbf95f1156e9127dbc962541a4204f567e1a5e))
+* update CI script ([5b50d69](https://github.com/weights-ai/weights-sdk/commit/5b50d69ccd8383b2e1bf000517abdce6daa2f9de))
+
 ## 0.1.0-alpha.12 (2025-07-26)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
