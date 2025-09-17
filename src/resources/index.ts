@@ -15,10 +15,8 @@ export {
   type ImageLoraModelListResponse,
   type ImageLoraModelRetrieveDownloadURLResponse,
   type ImageLoraModelRetrieveStatusResponse,
-  type ImageLoraModelSearchResponse,
   type ImageLoraModelCreateParams,
   type ImageLoraModelListParams,
-  type ImageLoraModelSearchParams,
 } from './image-lora-models';
 export {
   Images,
@@ -33,10 +31,8 @@ export {
   type RvcModelListResponse,
   type RvcModelRetrieveDownloadURLResponse,
   type RvcModelRetrieveUploadedResponse,
-  type RvcModelSearchResponse,
   type RvcModelUploadResponse,
   type RvcModelListParams,
-  type RvcModelSearchParams,
   type RvcModelUploadParams,
 } from './rvc-models/rvc-models';
 export {

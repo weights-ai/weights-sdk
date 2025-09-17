@@ -49,14 +49,6 @@ export class RvcModels extends APIResource {
   }
 
   /**
-   * Searches through all public RVC models in the database. Results are sorted by
-   * creation date. This endpoint does not require authentication.
-   */
-  search(query: RvcModelSearchParams, options?: RequestOptions): APIPromise<RvcModelSearchResponse> {
-    return this._client.get('/rvc-models/search', { query, ...options });
-  }
-
-  /**
    * Uploads an existing RVC model to be used with Weights from the specified URL and
    * creates a new model entry in the database. The user must be authenticated.
    */
@@ -67,6 +59,8 @@ export class RvcModels extends APIResource {
 
 export interface RvcModelListResponse {
   items: Array<RvcModelListResponse.Item>;
+
+  nextCursor: string | null;
 }
 
 export namespace RvcModelListResponse {
@@ -77,9 +71,9 @@ export namespace RvcModelListResponse {
 
     name: string;
 
-    type: 'uploaded' | 'training';
+    rvcModel: Item.RvcModel | null;
 
-    updatedAt: string;
+    type: 'uploaded' | 'training';
 
     attempt?: number | null;
 
@@ -94,8 +88,6 @@ export namespace RvcModelListResponse {
     runDeEchoDeReverb?: boolean | null;
 
     runKaraoke?: boolean | null;
-
-    rvcModel?: Item.RvcModel | null;
 
     rvcModelId?: string | null;
 
@@ -113,6 +105,28 @@ export namespace RvcModelListResponse {
   }
 
   export namespace Item {
+    export interface RvcModel {
+      /**
+       * Unique identifier for the RVC model
+       */
+      id: string;
+
+      /**
+       * Timestamp when the model was created
+       */
+      createdAt: string;
+
+      /**
+       * Name of the RVC voice model
+       */
+      title: string;
+
+      /**
+       * URL of the model preview image
+       */
+      image?: string | null;
+    }
+
     export interface AudioFile {
       id: string;
 
@@ -121,12 +135,6 @@ export namespace RvcModelListResponse {
       isPreStemmed: boolean;
 
       url: string;
-    }
-
-    export interface RvcModel {
-      id: string;
-
-      title: string;
     }
   }
 }
@@ -150,29 +158,11 @@ export interface RvcModelRetrieveUploadedResponse {
    * Name of the RVC voice model
    */
   title: string;
-}
 
-export interface RvcModelSearchResponse {
-  models: Array<RvcModelSearchResponse.Model>;
-}
-
-export namespace RvcModelSearchResponse {
-  export interface Model {
-    /**
-     * Unique identifier for the RVC model
-     */
-    id: string;
-
-    /**
-     * Timestamp when the model was created
-     */
-    createdAt: string;
-
-    /**
-     * Name of the RVC voice model
-     */
-    title: string;
-  }
+  /**
+   * URL of the model preview image
+   */
+  image?: string | null;
 }
 
 export interface RvcModelUploadResponse {
@@ -190,6 +180,11 @@ export interface RvcModelUploadResponse {
    * Name of the RVC voice model
    */
   title: string;
+
+  /**
+   * URL of the model preview image
+   */
+  image?: string | null;
 }
 
 export interface RvcModelListParams {
@@ -205,21 +200,6 @@ export interface RvcModelListParams {
   limit?: number;
 
   search?: string;
-}
-
-export interface RvcModelSearchParams {
-  search: string;
-
-  /**
-   * Cursor for pagination to get the next page of results - this is the last item's
-   * ID from the previous page
-   */
-  cursor?: string | null;
-
-  /**
-   * Number of items to return per page
-   */
-  limit?: number;
 }
 
 export interface RvcModelUploadParams {
@@ -246,10 +226,8 @@ export declare namespace RvcModels {
     type RvcModelListResponse as RvcModelListResponse,
     type RvcModelRetrieveDownloadURLResponse as RvcModelRetrieveDownloadURLResponse,
     type RvcModelRetrieveUploadedResponse as RvcModelRetrieveUploadedResponse,
-    type RvcModelSearchResponse as RvcModelSearchResponse,
     type RvcModelUploadResponse as RvcModelUploadResponse,
     type RvcModelListParams as RvcModelListParams,
-    type RvcModelSearchParams as RvcModelSearchParams,
     type RvcModelUploadParams as RvcModelUploadParams,
   };
 
