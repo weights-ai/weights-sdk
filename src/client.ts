@@ -32,8 +32,6 @@ import {
   ImageLoraModelRetrieveDownloadURLResponse,
   ImageLoraModelRetrieveResponse,
   ImageLoraModelRetrieveStatusResponse,
-  ImageLoraModelSearchParams,
-  ImageLoraModelSearchResponse,
   ImageLoraModels,
 } from './resources/image-lora-models';
 import {
@@ -59,8 +57,6 @@ import {
   RvcModelListResponse,
   RvcModelRetrieveDownloadURLResponse,
   RvcModelRetrieveUploadedResponse,
-  RvcModelSearchParams,
-  RvcModelSearchResponse,
   RvcModelUploadParams,
   RvcModelUploadResponse,
   RvcModels,
@@ -798,10 +794,8 @@ export declare namespace Weights {
     type ImageLoraModelListResponse as ImageLoraModelListResponse,
     type ImageLoraModelRetrieveDownloadURLResponse as ImageLoraModelRetrieveDownloadURLResponse,
     type ImageLoraModelRetrieveStatusResponse as ImageLoraModelRetrieveStatusResponse,
-    type ImageLoraModelSearchResponse as ImageLoraModelSearchResponse,
     type ImageLoraModelCreateParams as ImageLoraModelCreateParams,
     type ImageLoraModelListParams as ImageLoraModelListParams,
-    type ImageLoraModelSearchParams as ImageLoraModelSearchParams,
   };
 
   export {
@@ -818,10 +812,8 @@ export declare namespace Weights {
     type RvcModelListResponse as RvcModelListResponse,
     type RvcModelRetrieveDownloadURLResponse as RvcModelRetrieveDownloadURLResponse,
     type RvcModelRetrieveUploadedResponse as RvcModelRetrieveUploadedResponse,
-    type RvcModelSearchResponse as RvcModelSearchResponse,
     type RvcModelUploadResponse as RvcModelUploadResponse,
     type RvcModelListParams as RvcModelListParams,
-    type RvcModelSearchParams as RvcModelSearchParams,
     type RvcModelUploadParams as RvcModelUploadParams,
   };
 
