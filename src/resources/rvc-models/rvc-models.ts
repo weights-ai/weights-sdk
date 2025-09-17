@@ -59,6 +59,8 @@ export class RvcModels extends APIResource {
 
 export interface RvcModelListResponse {
   items: Array<RvcModelListResponse.Item>;
+
+  nextCursor: string | null;
 }
 
 export namespace RvcModelListResponse {
@@ -69,9 +71,9 @@ export namespace RvcModelListResponse {
 
     name: string;
 
-    type: 'uploaded' | 'training';
+    rvcModel: Item.RvcModel | null;
 
-    updatedAt: string;
+    type: 'uploaded' | 'training';
 
     attempt?: number | null;
 
@@ -86,8 +88,6 @@ export namespace RvcModelListResponse {
     runDeEchoDeReverb?: boolean | null;
 
     runKaraoke?: boolean | null;
-
-    rvcModel?: Item.RvcModel | null;
 
     rvcModelId?: string | null;
 
@@ -105,6 +105,28 @@ export namespace RvcModelListResponse {
   }
 
   export namespace Item {
+    export interface RvcModel {
+      /**
+       * Unique identifier for the RVC model
+       */
+      id: string;
+
+      /**
+       * Timestamp when the model was created
+       */
+      createdAt: string;
+
+      /**
+       * Name of the RVC voice model
+       */
+      title: string;
+
+      /**
+       * URL of the model preview image
+       */
+      image?: string | null;
+    }
+
     export interface AudioFile {
       id: string;
 
@@ -113,12 +135,6 @@ export namespace RvcModelListResponse {
       isPreStemmed: boolean;
 
       url: string;
-    }
-
-    export interface RvcModel {
-      id: string;
-
-      title: string;
     }
   }
 }
@@ -142,6 +158,11 @@ export interface RvcModelRetrieveUploadedResponse {
    * Name of the RVC voice model
    */
   title: string;
+
+  /**
+   * URL of the model preview image
+   */
+  image?: string | null;
 }
 
 export interface RvcModelUploadResponse {
@@ -159,6 +180,11 @@ export interface RvcModelUploadResponse {
    * Name of the RVC voice model
    */
   title: string;
+
+  /**
+   * URL of the model preview image
+   */
+  image?: string | null;
 }
 
 export interface RvcModelListParams {
