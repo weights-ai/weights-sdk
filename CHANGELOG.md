@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.18 (2025-09-20)
+
+Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([69fbbe0](https://github.com/weights-ai/weights-sdk/commit/69fbbe03557d457d90705bb1353283ae2ab5bd45))
+
 ## 0.1.0-alpha.17 (2025-09-17)
 
 Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
