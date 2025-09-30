@@ -156,8 +156,6 @@ export namespace RvcModelListResponse {
        */
       export interface Metrics {
         creations: number;
-
-        views: number;
       }
     }
 
@@ -220,8 +218,6 @@ export namespace RvcModelRetrieveUploadedResponse {
    */
   export interface Metrics {
     creations: number;
-
-    views: number;
   }
 }
 
@@ -273,8 +269,6 @@ export namespace RvcModelSearchResponse {
      */
     export interface Metrics {
       creations: number;
-
-      views: number;
     }
   }
 }
@@ -322,8 +316,6 @@ export namespace RvcModelUploadResponse {
    */
   export interface Metrics {
     creations: number;
-
-    views: number;
   }
 }
 
