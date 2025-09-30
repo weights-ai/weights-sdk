@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-alpha.18 (2025-09-30)
+
+Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
+
+### Features
+
+* **api:** api update ([fa604b2](https://github.com/weights-ai/weights-sdk/commit/fa604b2831058df77dcc4ac2fe57508a3f3eef76))
+
+
+### Performance Improvements
+
+* faster formatting ([969fa0c](https://github.com/weights-ai/weights-sdk/commit/969fa0c7847dd7d026119622f5ee971117d75cdb))
+
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([69fbbe0](https://github.com/weights-ai/weights-sdk/commit/69fbbe03557d457d90705bb1353283ae2ab5bd45))
+* **internal:** codegen related update ([65fa47b](https://github.com/weights-ai/weights-sdk/commit/65fa47bbed832df73b128ba17270a036fcdd9cf7))
+* **internal:** fix incremental formatting in some cases ([98fbc46](https://github.com/weights-ai/weights-sdk/commit/98fbc466b59672a9b7537f87f696490eb0ddea3e))
+* **internal:** ignore .eslintcache ([9cd0d8d](https://github.com/weights-ai/weights-sdk/commit/9cd0d8df3afa36e79f1c4c5a817d88e864998fd1))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([d14c33a](https://github.com/weights-ai/weights-sdk/commit/d14c33a2b4361f24eb5e2b9916a03b47bc71b7df))
+
 ## 0.1.0-alpha.17 (2025-09-17)
 
 Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
