@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2025-10-02)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Features
+
+* **api:** api update ([9e3ef65](https://github.com/weights-ai/weights-sdk/commit/9e3ef65c7d6730601436158a1c5006d4d4dab273))
+
+
+### Chores
+
+* **internal:** remove .eslintcache ([e743642](https://github.com/weights-ai/weights-sdk/commit/e7436421e2c02827dc2b05e6440a4db1ef36baa9))
+
 ## 0.1.0-alpha.18 (2025-09-30)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
