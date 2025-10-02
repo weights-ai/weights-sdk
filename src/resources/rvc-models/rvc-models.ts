@@ -87,9 +87,13 @@ export namespace RvcModelListResponse {
 
     audioFiles?: Array<Item.AudioFile> | null;
 
+    creations?: number | null;
+
     description?: string | null;
 
     endTime?: string | null;
+
+    likes?: number | null;
 
     queuePosition?: number | null;
 
@@ -140,23 +144,19 @@ export namespace RvcModelListResponse {
       content?: string | null;
 
       /**
+       * Number of times this model has been used for cover creations
+       */
+      creations?: number | null;
+
+      /**
        * URL of the model preview image
        */
       image?: string | null;
 
       /**
-       * Metrics related to the model's usage and performance
+       * Number of likes the model has received
        */
-      metrics?: RvcModel.Metrics | null;
-    }
-
-    export namespace RvcModel {
-      /**
-       * Metrics related to the model's usage and performance
-       */
-      export interface Metrics {
-        creations: number;
-      }
+      likes?: number | null;
     }
 
     export interface AudioFile {
@@ -202,23 +202,19 @@ export interface RvcModelRetrieveUploadedResponse {
   content?: string | null;
 
   /**
+   * Number of times this model has been used for cover creations
+   */
+  creations?: number | null;
+
+  /**
    * URL of the model preview image
    */
   image?: string | null;
 
   /**
-   * Metrics related to the model's usage and performance
+   * Number of likes the model has received
    */
-  metrics?: RvcModelRetrieveUploadedResponse.Metrics | null;
-}
-
-export namespace RvcModelRetrieveUploadedResponse {
-  /**
-   * Metrics related to the model's usage and performance
-   */
-  export interface Metrics {
-    creations: number;
-  }
+  likes?: number | null;
 }
 
 export interface RvcModelSearchResponse {
@@ -253,23 +249,19 @@ export namespace RvcModelSearchResponse {
     content?: string | null;
 
     /**
+     * Number of times this model has been used for cover creations
+     */
+    creations?: number | null;
+
+    /**
      * URL of the model preview image
      */
     image?: string | null;
 
     /**
-     * Metrics related to the model's usage and performance
+     * Number of likes the model has received
      */
-    metrics?: Model.Metrics | null;
-  }
-
-  export namespace Model {
-    /**
-     * Metrics related to the model's usage and performance
-     */
-    export interface Metrics {
-      creations: number;
-    }
+    likes?: number | null;
   }
 }
 
@@ -300,23 +292,19 @@ export interface RvcModelUploadResponse {
   content?: string | null;
 
   /**
+   * Number of times this model has been used for cover creations
+   */
+  creations?: number | null;
+
+  /**
    * URL of the model preview image
    */
   image?: string | null;
 
   /**
-   * Metrics related to the model's usage and performance
+   * Number of likes the model has received
    */
-  metrics?: RvcModelUploadResponse.Metrics | null;
-}
-
-export namespace RvcModelUploadResponse {
-  /**
-   * Metrics related to the model's usage and performance
-   */
-  export interface Metrics {
-    creations: number;
-  }
+  likes?: number | null;
 }
 
 export interface RvcModelListParams {
