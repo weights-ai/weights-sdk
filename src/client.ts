@@ -34,14 +34,7 @@ import {
   ImageLoraModelRetrieveStatusResponse,
   ImageLoraModels,
 } from './resources/image-lora-models';
-import {
-  ImageCreateParams,
-  ImageCreateResponse,
-  ImageListParams,
-  ImageListResponse,
-  ImageRetrieveResponse,
-  Images,
-} from './resources/images';
+import { Images } from './resources/images';
 import {
   SongCreateParams,
   SongCreateResponse,
@@ -51,7 +44,7 @@ import {
   Songs,
 } from './resources/songs';
 import { User, UserRetrieveResponse } from './resources/user';
-import { VideoCreateParams, VideoCreateResponse, Videos } from './resources/videos';
+import { Videos } from './resources/videos';
 import {
   RvcModelListParams,
   RvcModelListResponse,
@@ -774,20 +767,9 @@ Weights.User = User;
 export declare namespace Weights {
   export type RequestOptions = Opts.RequestOptions;
 
-  export {
-    Images as Images,
-    type ImageCreateResponse as ImageCreateResponse,
-    type ImageRetrieveResponse as ImageRetrieveResponse,
-    type ImageListResponse as ImageListResponse,
-    type ImageCreateParams as ImageCreateParams,
-    type ImageListParams as ImageListParams,
-  };
+  export { Images as Images };
 
-  export {
-    Videos as Videos,
-    type VideoCreateResponse as VideoCreateResponse,
-    type VideoCreateParams as VideoCreateParams,
-  };
+  export { Videos as Videos };
 
   export {
     ImageLoraModels as ImageLoraModels,
