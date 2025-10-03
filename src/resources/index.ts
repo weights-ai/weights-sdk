@@ -18,14 +18,7 @@ export {
   type ImageLoraModelCreateParams,
   type ImageLoraModelListParams,
 } from './image-lora-models';
-export {
-  Images,
-  type ImageCreateResponse,
-  type ImageRetrieveResponse,
-  type ImageListResponse,
-  type ImageCreateParams,
-  type ImageListParams,
-} from './images';
+export { Images } from './images';
 export {
   RvcModels,
   type RvcModelListResponse,
@@ -46,4 +39,4 @@ export {
   type SongListParams,
 } from './songs';
 export { User, type UserRetrieveResponse } from './user';
-export { Videos, type VideoCreateResponse, type VideoCreateParams } from './videos';
+export { Videos } from './videos';
