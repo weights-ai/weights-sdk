@@ -1,26 +1,6 @@
 # Images
 
-Types:
-
-- <code><a href="./src/resources/images.ts">ImageCreateResponse</a></code>
-- <code><a href="./src/resources/images.ts">ImageRetrieveResponse</a></code>
-- <code><a href="./src/resources/images.ts">ImageListResponse</a></code>
-
-Methods:
-
-- <code title="post /images/create">client.images.<a href="./src/resources/images.ts">create</a>({ ...params }) -> ImageCreateResponse</code>
-- <code title="get /images/{id}">client.images.<a href="./src/resources/images.ts">retrieve</a>(id) -> ImageRetrieveResponse</code>
-- <code title="get /images">client.images.<a href="./src/resources/images.ts">list</a>({ ...params }) -> ImageListResponse</code>
-
 # Videos
-
-Types:
-
-- <code><a href="./src/resources/videos.ts">VideoCreateResponse</a></code>
-
-Methods:
-
-- <code title="post /videos/create">client.videos.<a href="./src/resources/videos.ts">create</a>({ ...params }) -> VideoCreateResponse</code>
 
 # ImageLoraModels
 
