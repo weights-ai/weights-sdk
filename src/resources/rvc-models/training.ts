@@ -122,7 +122,7 @@ export interface TrainingCreateResponse {
   /**
    * Current status of the training job
    */
-  status?: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED' | null;
+  status?: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED' | null;
 }
 
 export namespace TrainingCreateResponse {
@@ -253,7 +253,7 @@ export interface TrainingRetrieveResponse {
   /**
    * Current status of the training job
    */
-  status?: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED' | null;
+  status?: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED' | null;
 }
 
 export namespace TrainingRetrieveResponse {
@@ -304,7 +304,7 @@ export interface TrainingStatusResponse {
 
   shortStatusText: string | null;
 
-  status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+  status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 }
 
 export interface TrainingCreateParams {
