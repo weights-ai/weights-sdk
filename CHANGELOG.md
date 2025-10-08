@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-10-08)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Features
+
+* **api:** api update ([f261baa](https://github.com/weights-ai/weights-sdk/commit/f261baa02274f636a0d6587eb51aceeef12f48d1))
+
+
+### Chores
+
+* **internal:** use npm pack for build uploads ([6601ba5](https://github.com/weights-ai/weights-sdk/commit/6601ba53cb708da0bc0285c34b6598b20798b0c1))
+* **jsdoc:** fix [@link](https://github.com/link) annotations to refer only to parts of the package‘s public interface ([ce80ae9](https://github.com/weights-ai/weights-sdk/commit/ce80ae9528a250e86003c24ad6ba0d8e1c575f02))
+
 ## 0.1.0-alpha.20 (2025-10-03)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/weights-ai/weights-sdk/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
