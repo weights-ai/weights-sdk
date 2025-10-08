@@ -48,7 +48,7 @@ export interface CoverCreateResponse {
   /**
    * Current status of the cover generation job
    */
-  status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+  status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 
   /**
    * Original filename of the input audio
@@ -105,7 +105,7 @@ export interface CoverRetrieveResponse {
   /**
    * Current status of the cover generation job
    */
-  status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+  status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 
   /**
    * Original filename of the input audio
@@ -167,7 +167,7 @@ export namespace CoverListResponse {
     /**
      * Current status of the cover generation job
      */
-    status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+    status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 
     /**
      * Original filename of the input audio

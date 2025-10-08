@@ -107,7 +107,7 @@ export namespace RvcModelListResponse {
 
     startTime?: string | null;
 
-    status?: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED' | null;
+    status?: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED' | null;
 
     title?: string | null;
 
