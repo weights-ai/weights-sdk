@@ -150,7 +150,7 @@ export namespace ImageLoraModelRetrieveResponse {
     /**
      * Current status of the training job
      */
-    status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+    status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 
     /**
      * Brief description of the current training status
@@ -244,7 +244,7 @@ export namespace ImageLoraModelListResponse {
       /**
        * Current status of the training job
        */
-      status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+      status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 
       /**
        * Brief description of the current training status
@@ -263,11 +263,9 @@ export interface ImageLoraModelRetrieveStatusResponse {
 
   createdAt: string;
 
-  queuePosition: number | null;
-
   shortStatusText: string | null;
 
-  status: 'QUEUED' | 'PENDING_WORKER' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+  status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
 }
 
 export interface ImageLoraModelCreateParams {
