@@ -79,7 +79,7 @@ export interface SongRetrieveResponse {
   /**
    * Current status of the song generation job
    */
-  status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+  status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED' | 'ARCHIVED';
 
   /**
    * Timestamp when the job was last updated
@@ -141,7 +141,7 @@ export namespace SongListResponse {
     /**
      * Current status of the song generation job
      */
-    status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED';
+    status: 'QUEUED' | 'PROCESSING' | 'ERRORED' | 'SUCCEEDED' | 'CANCELED' | 'ARCHIVED';
 
     /**
      * Timestamp when the job was last updated
